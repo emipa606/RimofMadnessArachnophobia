@@ -19,6 +19,7 @@
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
+    <li>CETeam.CombatExtended</li>
   </loadAfter>
   <description>Update of Jecrells mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
