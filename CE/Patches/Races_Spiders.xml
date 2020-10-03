@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRace"]</xpath>
+    <value>
+      <li Class="CombatExtended.RacePropertiesExtensionCE">
+        <bodyShape>QuadrupedLow</bodyShape>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiant" or defName="ROMA_SpiderRaceGiantQueen"]</xpath>
+    <value>
+      <li Class="CombatExtended.RacePropertiesExtensionCE">
+        <bodyShape>Quadruped</bodyShape>
+      </li>
+    </value>
+  </Operation>
+  <!-- ========== ROMA_SpiderRace ========== -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRace"]/statBases/MoveSpeed</xpath>
+    <value>
+      <MoveSpeed>7</MoveSpeed>
+      <MeleeDodgeChance>0.14</MeleeDodgeChance>
+      <MeleeCritChance>0.02</MeleeCritChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRace"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>fangs</label>
+          <capacities>
+            <li>ROMA_Sting</li>
+          </capacities>
+          <power>15</power>
+          <cooldownTime>1.65</cooldownTime>
+          <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+          <armorPenetrationSharp>0.1</armorPenetrationSharp>
+          <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRace"]/statBases/ArmorRating_Blunt</xpath>
+    <value>
+      <ArmorRating_Blunt>1.8</ArmorRating_Blunt>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRace"]/statBases/ArmorRating_Sharp</xpath>
+    <value>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRace"]/race/baseHealthScale</xpath>
+    <value>
+      <baseHealthScale>0.5</baseHealthScale>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="ROMA_SpiderKind"]/combatPower</xpath>
+    <value>
+      <combatPower>5</combatPower>
+    </value>
+  </Operation>
+  <!-- ========== ROMA_SpiderRaceGiant ========== -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiant"]/statBases/MoveSpeed</xpath>
+    <value>
+      <MoveSpeed>6</MoveSpeed>
+      <MeleeDodgeChance>0.08</MeleeDodgeChance>
+      <MeleeCritChance>0.12</MeleeCritChance>
+      <MeleeParryChance>0.09</MeleeParryChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiant"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>fangs</label>
+          <capacities>
+            <li>ROMA_Sting</li>
+          </capacities>
+          <power>20</power>
+          <cooldownTime>1.8</cooldownTime>
+          <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+          <armorPenetrationSharp>0.5</armorPenetrationSharp>
+          <armorPenetrationBlunt>0.8</armorPenetrationBlunt>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>front left leg</label>
+          <capacities>
+            <li>Blunt</li>
+            <li>Poke</li>
+          </capacities>
+          <power>19</power>
+          <cooldownTime>1.65</cooldownTime>
+          <chanceFactor>0.7</chanceFactor>
+          <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+          <armorPenetrationSharp>0.54</armorPenetrationSharp>
+          <armorPenetrationBlunt>1.5</armorPenetrationBlunt>
+          <surpriseAttack>
+            <extraMeleeDamages>
+              <li>
+                <def>Stun</def>
+                <amount>14</amount>
+              </li>
+            </extraMeleeDamages>
+          </surpriseAttack>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>front right leg</label>
+          <capacities>
+            <li>Blunt</li>
+            <li>Poke</li>
+          </capacities>
+          <power>19</power>
+          <cooldownTime>1.65</cooldownTime>
+          <chanceFactor>0.7</chanceFactor>
+          <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+          <armorPenetrationSharp>0.54</armorPenetrationSharp>
+          <armorPenetrationBlunt>1.5</armorPenetrationBlunt>
+          <surpriseAttack>
+            <extraMeleeDamages>
+              <li>
+                <def>Stun</def>
+                <amount>14</amount>
+              </li>
+            </extraMeleeDamages>
+          </surpriseAttack>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiant"]/statBases/ArmorRating_Blunt</xpath>
+    <value>
+      <ArmorRating_Blunt>8</ArmorRating_Blunt>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiant"]/statBases/ArmorRating_Sharp</xpath>
+    <value>
+      <ArmorRating_Sharp>3</ArmorRating_Sharp>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiant"]/race/baseHealthScale</xpath>
+    <value>
+      <baseHealthScale>1.8</baseHealthScale>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="ROMA_SpiderKindGiant"]/combatPower</xpath>
+    <value>
+      <combatPower>200</combatPower>
+    </value>
+  </Operation>
+  <!-- ========== ROMA_SpiderRaceGiantQueen ========== -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiantQueen"]/statBases/MoveSpeed</xpath>
+    <value>
+      <MoveSpeed>15</MoveSpeed>
+      <MeleeDodgeChance>0.07</MeleeDodgeChance>
+      <MeleeCritChance>0.25</MeleeCritChance>
+      <MeleeParryChance>0.17</MeleeParryChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiantQueen"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>fangs</label>
+          <capacities>
+            <li>ROMA_Sting</li>
+          </capacities>
+          <power>33</power>
+          <cooldownTime>2.3</cooldownTime>
+          <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+          <chanceFactor>0.33</chanceFactor>
+          <armorPenetrationSharp>1.5</armorPenetrationSharp>
+          <armorPenetrationBlunt>2.8</armorPenetrationBlunt>
+          <surpriseAttack>
+            <extraMeleeDamages>
+              <li>
+                <def>Stun</def>
+                <amount>22</amount>
+              </li>
+            </extraMeleeDamages>
+          </surpriseAttack>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>stinger</label>
+          <capacities>
+            <li>ROMA_Sting</li>
+          </capacities>
+          <power>38</power>
+          <cooldownTime>2.3</cooldownTime>
+          <linkedBodyPartsGroup>ROMA_StingerGroup</linkedBodyPartsGroup>
+          <chanceFactor>0.33</chanceFactor>
+          <armorPenetrationSharp>1.9</armorPenetrationSharp>
+          <armorPenetrationBlunt>2.8</armorPenetrationBlunt>
+          <surpriseAttack>
+            <extraMeleeDamages>
+              <li>
+                <def>Stun</def>
+                <amount>22</amount>
+              </li>
+            </extraMeleeDamages>
+          </surpriseAttack>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>front left leg</label>
+          <capacities>
+            <li>Blunt</li>
+            <li>Poke</li>
+          </capacities>
+          <power>20</power>
+          <cooldownTime>1.65</cooldownTime>
+          <chanceFactor>0.7</chanceFactor>
+          <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+          <armorPenetrationSharp>1.54</armorPenetrationSharp>
+          <armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+          <surpriseAttack>
+            <extraMeleeDamages>
+              <li>
+                <def>Stun</def>
+                <amount>14</amount>
+              </li>
+            </extraMeleeDamages>
+          </surpriseAttack>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>front right leg</label>
+          <capacities>
+            <li>Blunt</li>
+            <li>Poke</li>
+          </capacities>
+          <power>20</power>
+          <cooldownTime>1.65</cooldownTime>
+          <chanceFactor>0.7</chanceFactor>
+          <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+          <armorPenetrationSharp>1.54</armorPenetrationSharp>
+          <armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+          <surpriseAttack>
+            <extraMeleeDamages>
+              <li>
+                <def>Stun</def>
+                <amount>14</amount>
+              </li>
+            </extraMeleeDamages>
+          </surpriseAttack>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiantQueen"]/statBases/ArmorRating_Blunt</xpath>
+    <value>
+      <ArmorRating_Blunt>22</ArmorRating_Blunt>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiantQueen"]/statBases/ArmorRating_Sharp</xpath>
+    <value>
+      <ArmorRating_Sharp>14</ArmorRating_Sharp>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="ROMA_SpiderRaceGiantQueen"]/race/baseHealthScale</xpath>
+    <value>
+      <baseHealthScale>8.8</baseHealthScale>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="ROMA_SpiderKindGiantQueen"]/combatPower</xpath>
+    <value>
+      <combatPower>700</combatPower>
+    </value>
+  </Operation>
+</Patch>
