@@ -1,3 +1,0 @@
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\HP Lovecraft Storyteller\Assemblies\HPLovecraft.dll
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\HP Lovecraft Storyteller\Source\obj\Debug\HPLovecraft.csprojResolveAssemblyReference.cache
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\HP Lovecraft Storyteller\Source\obj\Debug\HPLovecraft.dll
