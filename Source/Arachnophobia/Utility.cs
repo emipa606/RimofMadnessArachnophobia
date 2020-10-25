@@ -14,11 +14,13 @@ namespace Arachnophobia
 
             //Wild spiders should go for non-home located cocoons and cocoons that are not in storage areas.
             var wildCocoons = map.GetComponent<MapComponent_CocoonTracker>().WildCocoons;
-            if ((wildCocoons != null || wildCocoons.Count > 0)  && t.Faction != Faction.OfPlayerSilentFail) return wildCocoons;
+            if ((wildCocoons != null || wildCocoons.Count > 0)  && t.Faction != Faction.OfPlayerSilentFail) 
+                return wildCocoons;
 
             //Domestic spiders should go for home located cocoons or cocoons in storage areas.
             var domesticCocoons = map.GetComponent<MapComponent_CocoonTracker>().DomesticCocoons;
-            if ((domesticCocoons != null || domesticCocoons.Count > 0) && t.Faction == Faction.OfPlayerSilentFail) return new HashSet<Thing>(domesticCocoons.Where(x => ForbidUtility.InAllowedArea(x.PositionHeld, t as Pawn)));
+            if ((domesticCocoons != null || domesticCocoons.Count > 0) && t.Faction == Faction.OfPlayerSilentFail) 
+                return new HashSet<Thing>(domesticCocoons.Where(x => ForbidUtility.InAllowedArea(x.PositionHeld, t as Pawn)));
 
             //Other cases should not exist.
             //("Arachophobia :: No cocoons exist");

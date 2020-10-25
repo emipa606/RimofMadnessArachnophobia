@@ -186,6 +186,10 @@ namespace Arachnophobia
 
                         newCocoon = (Building_Cocoon)GenSpawn.Spawn(CocoonDef, newPosition, spinner.Map);
                         newCocoon.Spinner = spinner;
+                        if(spinner.Faction == Faction.OfPlayerSilentFail)
+                        {
+                            newCocoon.SetFactionDirect(Faction.OfPlayerSilentFail);
+                        }
                         //Log.Message("New Spinner: " + newCocoon.Spinner.Label);
                         newCocoon.TryGetInnerInteractableThingOwner().TryAdd(toLoad);
                         this.pawn?.CurJob?.SetTarget(TargetIndex.B, newCocoon);
