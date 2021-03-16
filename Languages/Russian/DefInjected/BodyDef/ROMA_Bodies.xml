@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- BODY DEFS -->
+  <ROMA_SpiderBody.label>арахниды</ROMA_SpiderBody.label>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.1.customLabel>левый передний боковой глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.1.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.2.customLabel>правый передний боковой глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.2.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.3.customLabel>левый передний срединный глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.3.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.4.customLabel>правый передний срединный глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.4.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.5.customLabel>левый задний боковой глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.5.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.6.customLabel>правый задний боковой глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.6.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.7.customLabel>левый задний срединный глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.7.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.0.parts.8.customLabel>правый задний срединный глаз</ROMA_SpiderBody.corePart.parts.0.parts.0.parts.8.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.3.customLabel>передняя левая нога</ROMA_SpiderBody.corePart.parts.0.parts.3.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.4.customLabel>передняя правая нога</ROMA_SpiderBody.corePart.parts.0.parts.4.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.5.customLabel>средняя левая нога</ROMA_SpiderBody.corePart.parts.0.parts.5.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.6.customLabel>средняя правая нога</ROMA_SpiderBody.corePart.parts.0.parts.6.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.9.customLabel>задняя левая нога</ROMA_SpiderBody.corePart.parts.0.parts.9.customLabel>
+  <ROMA_SpiderBody.corePart.parts.0.parts.10.customLabel>задняя правая нога</ROMA_SpiderBody.corePart.parts.0.parts.10.customLabel>
+</LanguageData>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- WEBS -->
+  <ROMA_Web.label>паутина</ROMA_Web.label>
+  <ROMA_Web.description>Шелковая паутина для ловли добычи.</ROMA_Web.description>
+  <ROMA_WebGiant.label>гигантская паутина</ROMA_WebGiant.label>
+  <ROMA_WebGiant.description>Огромная шелковая паутина для ловли крупной добычи.</ROMA_WebGiant.description>
+</LanguageData>

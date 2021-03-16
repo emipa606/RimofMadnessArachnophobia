@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- BODY PARTS -->
+  <ROMA_Stinger.label>жало</ROMA_Stinger.label>
+  <ROMA_Spinneret.label>фильера</ROMA_Spinneret.label>
+  <ROMA_Cephalothorax.label>капхалоторакс</ROMA_Cephalothorax.label>
+  <ROMA_Abdomen.label>брюхо</ROMA_Abdomen.label>
+  <ROMA_LeftPedipalp.label>левая педипальпа</ROMA_LeftPedipalp.label>
+  <ROMA_RightPedipalp.label>правая педипальпа</ROMA_RightPedipalp.label>
+  <ROMA_SecondMiddleLeftInsectLeg.label>вторая средняя левая нога</ROMA_SecondMiddleLeftInsectLeg.label>
+  <ROMA_SecondMiddleRightInsectLeg.label>вторая средняя правая нога</ROMA_SecondMiddleRightInsectLeg.label>
+</LanguageData>

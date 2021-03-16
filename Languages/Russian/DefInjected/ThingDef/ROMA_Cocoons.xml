@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- COCOONS -->
+  <ROMA_Cocoon.label>кокон</ROMA_Cocoon.label>
+  <ROMA_Cocoon.description>Шелковый кокон для удерживания обездвиженной живой или мертвой добычи.</ROMA_Cocoon.description>
+  <ROMA_CocoonGiant.label>большой кокон</ROMA_CocoonGiant.label>
+  <ROMA_CocoonGiant.description>Огромный шелковый кокон для удерживания крупной добычи.</ROMA_CocoonGiant.description>
+</LanguageData>

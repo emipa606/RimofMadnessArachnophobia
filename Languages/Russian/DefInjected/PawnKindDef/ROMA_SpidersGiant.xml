@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- GIANT SPIDERS -->
+  <ROMA_SpiderKindGiant.label>гигантский паук</ROMA_SpiderKindGiant.label>
+  <ROMA_SpiderKindGiant.labelPlural>гигантские пауки</ROMA_SpiderKindGiant.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.label>гигантский паучонок</ROMA_SpiderKindGiant.lifeStages.0.label>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelPlural>гигантские паучата</ROMA_SpiderKindGiant.lifeStages.0.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelMale>гигантский паучонок</ROMA_SpiderKindGiant.lifeStages.0.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelMalePlural>гигантские паучата</ROMA_SpiderKindGiant.lifeStages.0.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelFemale>гигантский паучонок</ROMA_SpiderKindGiant.lifeStages.0.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelFemalePlural>гигантские паучата</ROMA_SpiderKindGiant.lifeStages.0.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.label>молодой гигантский паук</ROMA_SpiderKindGiant.lifeStages.1.label>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelPlural>молодые гигантские пауки</ROMA_SpiderKindGiant.lifeStages.1.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelMale>молодой гигантский паук</ROMA_SpiderKindGiant.lifeStages.1.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelMalePlural>молодые гигантские пауки</ROMA_SpiderKindGiant.lifeStages.1.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelFemale>молодая гигантская паучиха</ROMA_SpiderKindGiant.lifeStages.1.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelFemalePlural>молодые гигантские паучихи</ROMA_SpiderKindGiant.lifeStages.1.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.label>гигантский паук</ROMA_SpiderKindGiant.lifeStages.2.label>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelPlural>гигантские пауки</ROMA_SpiderKindGiant.lifeStages.2.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelMale>гигантский паук</ROMA_SpiderKindGiant.lifeStages.2.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelMalePlural>гигантские пауки</ROMA_SpiderKindGiant.lifeStages.2.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelFemale>гигантская паучиха</ROMA_SpiderKindGiant.lifeStages.2.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelFemalePlural>гигантские паучихи</ROMA_SpiderKindGiant.lifeStages.2.labelFemalePlural>
+  <ROMA_SpiderKindGiant.labelMale>гигантский паук</ROMA_SpiderKindGiant.labelMale>
+  <ROMA_SpiderKindGiant.labelMalePlural>гигантские пауки</ROMA_SpiderKindGiant.labelMalePlural>
+  <ROMA_SpiderKindGiant.labelFemale>гигантская паучиха</ROMA_SpiderKindGiant.labelFemale>
+  <ROMA_SpiderKindGiant.labelFemalePlural>гигантские паучихи</ROMA_SpiderKindGiant.labelFemalePlural>
+</LanguageData>

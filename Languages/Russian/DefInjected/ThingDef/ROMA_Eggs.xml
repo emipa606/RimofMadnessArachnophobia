@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- EGGS -->
+  <ROMA_SpiderEgg.label>кладка паучьих яиц</ROMA_SpiderEgg.label>
+  <ROMA_SpiderEgg.description>Кладка с яйцами, наполненными паучатами.</ROMA_SpiderEgg.description>
+  <ROMA_SpiderEggGiant.label>кладка гигантских паучьих яиц</ROMA_SpiderEggGiant.label>
+  <ROMA_SpiderEggGiant.description>Кладка с яйцами, наполненными гигантскими паучатами.</ROMA_SpiderEggGiant.description>
+</LanguageData>

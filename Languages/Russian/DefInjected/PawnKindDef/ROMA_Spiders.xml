@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- SPIDERS (STANDARD) -->
+  <ROMA_SpiderKind.label>паук</ROMA_SpiderKind.label>
+  <ROMA_SpiderKind.labelPlural>пауки</ROMA_SpiderKind.labelPlural>
+  <ROMA_SpiderKind.lifeStages.0.label>паучонок</ROMA_SpiderKind.lifeStages.0.label>
+  <ROMA_SpiderKind.lifeStages.0.labelPlural>паучата</ROMA_SpiderKind.lifeStages.0.labelPlural>
+  <ROMA_SpiderKind.lifeStages.0.labelMale>паучонок</ROMA_SpiderKind.lifeStages.0.labelMale>
+  <ROMA_SpiderKind.lifeStages.0.labelMalePlural>паучата</ROMA_SpiderKind.lifeStages.0.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.0.labelFemale>паучонок</ROMA_SpiderKind.lifeStages.0.labelFemale>
+  <ROMA_SpiderKind.lifeStages.0.labelFemalePlural>паучата</ROMA_SpiderKind.lifeStages.0.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.1.label>молодой паук</ROMA_SpiderKind.lifeStages.1.label>
+  <ROMA_SpiderKind.lifeStages.1.labelPlural>молодые пауки</ROMA_SpiderKind.lifeStages.1.labelPlural>
+  <ROMA_SpiderKind.lifeStages.1.labelMale>молодой паук</ROMA_SpiderKind.lifeStages.1.labelMale>
+  <ROMA_SpiderKind.lifeStages.1.labelMalePlural>молодые пауки</ROMA_SpiderKind.lifeStages.1.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.1.labelFemale>молодая паучиха</ROMA_SpiderKind.lifeStages.1.labelFemale>
+  <ROMA_SpiderKind.lifeStages.1.labelFemalePlural>молодые паучихи</ROMA_SpiderKind.lifeStages.1.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.2.label>паук</ROMA_SpiderKind.lifeStages.2.label>
+  <ROMA_SpiderKind.lifeStages.2.labelPlural>пауки</ROMA_SpiderKind.lifeStages.2.labelPlural>
+  <ROMA_SpiderKind.lifeStages.2.labelMale>паук</ROMA_SpiderKind.lifeStages.2.labelMale>
+  <ROMA_SpiderKind.lifeStages.2.labelMalePlural>пауки</ROMA_SpiderKind.lifeStages.2.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.2.labelFemale>паучиха</ROMA_SpiderKind.lifeStages.2.labelFemale>
+  <ROMA_SpiderKind.lifeStages.2.labelFemalePlural>паучихи</ROMA_SpiderKind.lifeStages.2.labelFemalePlural>
+  <ROMA_SpiderKind.labelMale>паук</ROMA_SpiderKind.labelMale>
+  <ROMA_SpiderKind.labelMalePlural>пауки</ROMA_SpiderKind.labelMalePlural>
+  <ROMA_SpiderKind.labelFemale>паучиха</ROMA_SpiderKind.labelFemale>
+  <ROMA_SpiderKind.labelFemalePlural>паучихи</ROMA_SpiderKind.labelFemalePlural>
+</LanguageData>

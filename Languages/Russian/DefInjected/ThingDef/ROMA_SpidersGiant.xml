@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- GIANT SPIDERS -->
+  <ROMA_SpiderRaceGiant.label>гигантский паук</ROMA_SpiderRaceGiant.label>
+  <ROMA_SpiderRaceGiant.description>Этот чудовищный продукт генной инженерии является хищником размером с муффало и имеет восемь ног, твердый панцирь и ядовитый укус.</ROMA_SpiderRaceGiant.description>
+  <ROMA_SpiderRaceGiant.tools.0.label>пасть</ROMA_SpiderRaceGiant.tools.0.label>
+  <ROMA_SpiderRaceGiant.tools.1.label>передняя левая нога</ROMA_SpiderRaceGiant.tools.1.label>
+  <ROMA_SpiderRaceGiant.tools.2.label>передняя правая нога</ROMA_SpiderRaceGiant.tools.2.label>
+</LanguageData>

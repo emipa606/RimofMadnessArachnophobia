@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- GIANT SPIDER QUEEN -->
+  <ROMA_SpiderRaceGiantQueen.label>гигантская паучья королева</ROMA_SpiderRaceGiantQueen.label>
+  <ROMA_SpiderRaceGiantQueen.description>Гигантская паучья королева, размером в половину трумбо, является ярким примером ужасной ошибки генной инженерии. У некоторых разновидностей королев есть крылья, что делает их способными летать на короткие расстояния, и жала, способные вводить в жертву огромные дозы нейротоксина.</ROMA_SpiderRaceGiantQueen.description>
+  <ROMA_SpiderRaceGiantQueen.tools.0.label>пасть</ROMA_SpiderRaceGiantQueen.tools.0.label>
+  <ROMA_SpiderRaceGiantQueen.tools.1.label>жало</ROMA_SpiderRaceGiantQueen.tools.1.label>
+  <ROMA_SpiderRaceGiantQueen.tools.2.label>передняя левая нога</ROMA_SpiderRaceGiantQueen.tools.2.label>
+  <ROMA_SpiderRaceGiantQueen.tools.3.label>передняя правая нога</ROMA_SpiderRaceGiantQueen.tools.3.label>
+</LanguageData>
