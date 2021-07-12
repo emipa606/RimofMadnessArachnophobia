@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
-using RimWorld;
-using Verse;
 using RimWorld.Planet;
+using Verse;
 
 namespace Arachnophobia
 {
     public class WorldComponent_ModSettings : WorldComponent
     {
-        private bool spiderDefsModified = false;
-        public bool SpiderDefsModified { get { return spiderDefsModified; } set { spiderDefsModified = value; } }
         public WorldComponent_ModSettings(World world) : base(world)
         {
         }
+
+        public bool SpiderDefsModified { get; set; }
 
         public override void WorldComponentTick()
         {
@@ -21,37 +20,40 @@ namespace Arachnophobia
 
         public void ResolveSpiderDefSettings()
         {
-            if (!SpiderDefsModified)
+            if (SpiderDefsModified)
             {
-                Log.Message("Arachnophobia :: Spider Biome Settings Adjusted :: Current Factor: " + ModInfo.romSpiderFactor);
-                SpiderDefsModified = true;
+                return;
+            }
 
-                List<ThingDef> spiders = 
-                    new List<ThingDef>
-                    {
-                        ROMADefOf.ROMA_SpiderRace,
-                        ROMADefOf.ROMA_SpiderRaceGiant
-                    };
+            Log.Message("Arachnophobia :: Spider Biome Settings Adjusted :: Current Factor: " +
+                        ModInfo.romSpiderFactor);
+            SpiderDefsModified = true;
 
-                List<PawnKindDef> spiderKinds =
-                    new List<PawnKindDef>
-                    {
-                        ROMADefOf.ROMA_SpiderKind,
-                        ROMADefOf.ROMA_SpiderKindGiant
-                    };
-
-                foreach (ThingDef def in spiders)
+            var spiders =
+                new List<ThingDef>
                 {
-                    foreach (AnimalBiomeRecord record in def.race.wildBiomes)
-                    {
-                        record.commonality *= ModInfo.romSpiderFactor;
-                    }
-                }
+                    ROMADefOf.ROMA_SpiderRace,
+                    ROMADefOf.ROMA_SpiderRaceGiant
+                };
 
-                foreach (PawnKindDef kind in spiderKinds)
+            var spiderKinds =
+                new List<PawnKindDef>
                 {
-                    kind.ecoSystemWeight *= ModInfo.romSpiderFactor;
+                    ROMADefOf.ROMA_SpiderKind,
+                    ROMADefOf.ROMA_SpiderKindGiant
+                };
+
+            foreach (var def in spiders)
+            {
+                foreach (var record in def.race.wildBiomes)
+                {
+                    record.commonality *= ModInfo.romSpiderFactor;
                 }
+            }
+
+            foreach (var kind in spiderKinds)
+            {
+                kind.ecoSystemWeight *= ModInfo.romSpiderFactor;
             }
         }
     }

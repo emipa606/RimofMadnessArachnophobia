@@ -6,13 +6,13 @@ namespace Arachnophobia
     {
         public float hatcherDaystoHatch = 1f;
 
-        public PawnKindDef hatcherPawn;
-
         public IntRange hatcherNumber = new IntRange(2, 3);
+
+        public PawnKindDef hatcherPawn;
 
         public CompProperties_MultiHatcher()
         {
-            this.compClass = typeof(CompMultiHatcher);
+            compClass = typeof(CompMultiHatcher);
         }
     }
 }

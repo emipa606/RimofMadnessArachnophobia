@@ -2,6 +2,7 @@
 using System.Linq;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace Arachnophobia
 {
@@ -14,13 +15,17 @@ namespace Arachnophobia
 
             //Wild spiders should go for non-home located cocoons and cocoons that are not in storage areas.
             var wildCocoons = map.GetComponent<MapComponent_CocoonTracker>().WildCocoons;
-            if ((wildCocoons != null || wildCocoons.Count > 0)  && t.Faction != Faction.OfPlayerSilentFail) 
+            if (wildCocoons != null && t.Faction != Faction.OfPlayerSilentFail)
+            {
                 return wildCocoons;
+            }
 
             //Domestic spiders should go for home located cocoons or cocoons in storage areas.
             var domesticCocoons = map.GetComponent<MapComponent_CocoonTracker>().DomesticCocoons;
-            if ((domesticCocoons != null || domesticCocoons.Count > 0) && t.Faction == Faction.OfPlayerSilentFail) 
-                return new HashSet<Thing>(domesticCocoons.Where(x => ForbidUtility.InAllowedArea(x.PositionHeld, t as Pawn)));
+            if (domesticCocoons != null && t.Faction == Faction.OfPlayerSilentFail)
+            {
+                return new HashSet<Thing>(domesticCocoons.Where(x => x.PositionHeld.InAllowedArea(t as Pawn)));
+            }
 
             //Other cases should not exist.
             //("Arachophobia :: No cocoons exist");
@@ -31,11 +36,14 @@ namespace Arachnophobia
         {
             Thing result = null;
             if (cocoons != null && cocoons.Count > 0)
-                result = GenClosest.ClosestThingReachable(spinner.Position, spinner.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), Verse.AI.PathEndMode.ClosestTouch,
-                TraverseParms.For(spinner, Danger.Deadly), 9999, (x => x is Building_Cocoon y && cocoons.Contains(y) && y.isConsumableBy(spinner)));
+            {
+                result = GenClosest.ClosestThingReachable(spinner.Position, spinner.Map,
+                    ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.ClosestTouch,
+                    TraverseParms.For(spinner), 9999,
+                    x => x is Building_Cocoon y && cocoons.Contains(y) && y.isConsumableBy(spinner));
+            }
+
             return result;
         }
-
-
     }
 }

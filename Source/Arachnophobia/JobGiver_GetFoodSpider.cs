@@ -1,6 +1,6 @@
-﻿using Verse;
+﻿using RimWorld;
+using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace Arachnophobia
 {
@@ -10,69 +10,81 @@ namespace Arachnophobia
 
         public override ThinkNode DeepCopy(bool resolve = true)
         {
-            JobGiver_GetFoodSpider JobGiver_GetFoodSpider = (JobGiver_GetFoodSpider)base.DeepCopy(resolve);
-            JobGiver_GetFoodSpider.minCategory = this.minCategory;
+            var JobGiver_GetFoodSpider = (JobGiver_GetFoodSpider) base.DeepCopy(resolve);
+            JobGiver_GetFoodSpider.minCategory = minCategory;
             return JobGiver_GetFoodSpider;
         }
 
         public override float GetPriority(Pawn pawn)
         {
-            Need_Food food = pawn.needs.food;
+            var food = pawn.needs.food;
             if (food == null)
             {
                 return 0f;
             }
+
             if (pawn.needs.food.CurCategory < HungerCategory.Starving && FoodUtility.ShouldBeFedBySomeone(pawn))
             {
                 return 0f;
             }
-            if (food.CurCategory < this.minCategory)
+
+            if (food.CurCategory < minCategory)
             {
                 return 0f;
             }
+
             if (food.CurLevelPercentage < pawn.RaceProps.FoodLevelPercentageWantEat)
             {
                 return 9.5f;
             }
+
             return 0f;
         }
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            Need_Food food = pawn.needs.food;
-            if (food == null || food.CurCategory < this.minCategory)
+            var food = pawn.needs.food;
+            if (food == null || food.CurCategory < minCategory)
             {
                 return null;
             }
+
             if (!pawn.RaceProps.Animal)
             {
                 return null;
             }
+
             var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
             if (localCocoons != null && localCocoons.Count > 0)
             {
                 Building_Cocoon closestCocoon = null;
                 var shortestDistance = 9999f;
-                foreach (Building_Cocoon cocoon in localCocoons)
+                foreach (var thing1 in localCocoons)
                 {
+                    var cocoon = (Building_Cocoon) thing1;
                     //Log.Message("1");
-                    if (cocoon?.isConsumableBy(pawn) == true &&
-                        cocoon.CurrentDrinker == null)
+                    if (cocoon?.isConsumableBy(pawn) != true || cocoon.CurrentDrinker != null)
                     {
-                        //Log.Message("2");
-                        if (closestCocoon == null)
-                        {
-                            closestCocoon = cocoon; 
-                            continue;
-                        }
-                        var thisDistance = (float)(cocoon.Position - pawn.Position).LengthHorizontalSquared;
-                        if (thisDistance < shortestDistance)
-                        {
-                            shortestDistance = thisDistance;
-                            closestCocoon = cocoon;
-                        }
+                        continue;
                     }
+
+                    //Log.Message("2");
+                    if (closestCocoon == null)
+                    {
+                        closestCocoon = cocoon;
+                        continue;
+                    }
+
+                    var thisDistance = (float) (cocoon.Position - pawn.Position).LengthHorizontalSquared;
+                    if (!(thisDistance < shortestDistance))
+                    {
+                        continue;
+                    }
+
+                    shortestDistance = thisDistance;
+                    closestCocoon = cocoon;
                 }
+
                 if (closestCocoon != null)
                 {
                     //Log.Message("3");
@@ -84,8 +96,8 @@ namespace Arachnophobia
             }
 
 
-            bool desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
-            if (!FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out Thing thing, out ThingDef def, true, true, false, true, false))
+            var desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
+            if (!FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out var thing, out var def))
             {
                 return null;
             }
@@ -98,26 +110,32 @@ namespace Arachnophobia
                 };
                 return jobToDo;
             }
-            if (thing is Building_NutrientPasteDispenser building_NutrientPasteDispenser && !building_NutrientPasteDispenser.HasEnoughFeedstockInHoppers())
+
+            if (thing is Building_NutrientPasteDispenser building_NutrientPasteDispenser &&
+                !building_NutrientPasteDispenser.HasEnoughFeedstockInHoppers())
             {
-                Building building = building_NutrientPasteDispenser.AdjacentReachableHopper(pawn);
+                var building = building_NutrientPasteDispenser.AdjacentReachableHopper(pawn);
                 if (building != null)
                 {
-                    ISlotGroupParent hopperSgp = building as ISlotGroupParent;
-                    Job job = WorkGiver_CookFillHopper.HopperFillFoodJob(pawn, hopperSgp);
+                    var hopperSgp = building as ISlotGroupParent;
+                    var job = WorkGiver_CookFillHopper.HopperFillFoodJob(pawn, hopperSgp);
                     if (job != null)
                     {
                         return job;
                     }
                 }
-                thing = FoodUtility.BestFoodSourceOnMap(pawn, pawn, desperate, out ThingDef thingDef, FoodPreferability.MealLavish, false, !pawn.IsTeetotaler(), false, false, false, false, false);
+
+                thing = FoodUtility.BestFoodSourceOnMap(pawn, pawn, desperate, out var thingDef,
+                    FoodPreferability.MealLavish, false, !pawn.IsTeetotaler(), false, false, false);
                 if (thing == null)
                 {
                     return null;
                 }
+
                 def = thingDef;
             }
-            float nutrition = FoodUtility.GetNutrition(thing, def);
+
+            var nutrition = FoodUtility.GetNutrition(thing, def);
             return new Job(JobDefOf.Ingest, thing)
             {
                 count = FoodUtility.WillIngestStackCountOf(pawn, def, nutrition)

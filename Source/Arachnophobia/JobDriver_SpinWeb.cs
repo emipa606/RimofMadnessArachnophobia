@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace Arachnophobia
 {
@@ -15,7 +15,11 @@ namespace Arachnophobia
             get
             {
                 var result = ROMADefOf.ROMA_Web;
-                if ((this?.pawn?.RaceProps?.baseBodySize ?? 0) > 2) result = ROMADefOf.ROMA_WebGiant;
+                if ((pawn?.RaceProps?.baseBodySize ?? 0) > 2)
+                {
+                    result = ROMADefOf.ROMA_WebGiant;
+                }
+
                 return result;
             }
         }
@@ -34,31 +38,43 @@ namespace Arachnophobia
                 defaultDuration = 500,
                 initAction = delegate
                 {
-                    int i = 999;
-                    bool breakNow = false;
+                    var i = 999;
+                    var breakNow = false;
                     while (i > 0)
                     {
-                        this.pawn.CurJob.SetTarget(TargetIndex.A, RCellFinder.RandomWanderDestFor(this.pawn, this.pawn.Position, 5f, null, Danger.Some));
-                        CellRect cellRect = GenAdj.OccupiedRect(TargetLocA, Rot4.North, WebDef.Size);
-                        CellRect.CellRectIterator iterator = cellRect.GetIterator();
-                        while (!iterator.Done())
+                        pawn.CurJob.SetTarget(TargetIndex.A,
+                            RCellFinder.RandomWanderDestFor(pawn, pawn.Position, 5f, null, Danger.Some));
+                        var cellRect = GenAdj.OccupiedRect(TargetLocA, Rot4.North, WebDef.Size);
+                        foreach (var cellRectCell in cellRect.Cells)
                         {
-                            IntVec3 current = iterator.Current;
-                            if (current.Walkable(Map))
-                                breakNow = true;
-                            iterator.MoveNext();
-                        }
-                        if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, this.pawn.Map).Accepted)
-                        {
-                            if (this.pawn?.Faction == null || this.pawn?.Faction != Faction.OfPlayerSilentFail) break;
-                            else if (this.pawn?.Faction == Faction.OfPlayerSilentFail && !TargetA.Cell.IsForbidden(this.pawn))
+                            if (cellRectCell.Walkable(Map))
                             {
                                 breakNow = true;
                             }
                         }
-                        else breakNow = false;
 
-                        if (breakNow) break;
+                        if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, pawn.Map).Accepted)
+                        {
+                            if (pawn?.Faction == null || pawn?.Faction != Faction.OfPlayerSilentFail)
+                            {
+                                break;
+                            }
+
+                            if (pawn?.Faction == Faction.OfPlayerSilentFail && !TargetA.Cell.IsForbidden(pawn))
+                            {
+                                breakNow = true;
+                            }
+                        }
+                        else
+                        {
+                            breakNow = false;
+                        }
+
+                        if (breakNow)
+                        {
+                            break;
+                        }
+
                         i--;
                     }
                 }
@@ -68,14 +84,15 @@ namespace Arachnophobia
             {
                 initAction = delegate
                 {
-                    var spinner = this.GetActor() as PawnWebSpinner;
-                    if (spinner != null && !GenGrid.CloseToEdge(spinner.Position, spinner.Map, 2))
+                    if (GetActor() is not PawnWebSpinner spinner || spinner.Position.CloseToEdge(spinner.Map, 2))
                     {
-                        var web = (Building_Web)GenSpawn.Spawn(WebDef, spinner.Position, spinner.Map);
-                        spinner.Web = web;
-                        spinner.WebsMade++;
-                        web.Spinner = spinner;
+                        return;
                     }
+
+                    var web = (Building_Web) GenSpawn.Spawn(WebDef, spinner.Position, spinner.Map);
+                    spinner.Web = web;
+                    spinner.WebsMade++;
+                    web.Spinner = spinner;
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
