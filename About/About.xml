@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Rim of Madness - Arachnophobia (Continued)</name>
   <packageId>Mlie.RimofMadnessArachnophobia</packageId>
@@ -22,7 +22,7 @@
     <li>brrainz.harmony</li>
     <li>CETeam.CombatExtended</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of Jecrells mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
 
@@ -32,7 +32,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
 - Added support for Combat Extended
 - Updated russian translation, thanks Animal Mind 
 
-[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+[img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
 	[tr]
@@ -41,7 +41,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
 	[/tr]
 [/table]
 	
-[img]https://i.imgur.com/NOW7jU1.png[/img]
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
 
 [h1]  Adds spiders to RimWorld.
 
@@ -94,7 +94,7 @@ Available in: English / Deutsch (Lauri7x3) / ру́сский язы́к (kr33ma
 [/h1]
 [list]
 [*]  Add proper flying to Spider Queens.
-[*]  Add &quot;milkable&quot; spider silk.
+[*]  Add "milkable" spider silk.
 [/list]
 
 [h1]Special thanks to all those that support me on Patreon (as of August 2017):[/h1]
@@ -104,7 +104,7 @@ Questions? Comments? Suggestions? Visit our Discord: http://discord.gg/ePKnqwR
 
 
 
-[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[img]https://i.imgur.com/PwoNOj4.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
@@ -115,4 +115,3 @@ Questions? Comments? Suggestions? Visit our Discord: http://discord.gg/ePKnqwR
 [/list]
 </description>
 </ModMetaData>
-

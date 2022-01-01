@@ -1,10 +1,9 @@
 ﻿using Verse;
 
-namespace Arachnophobia
+namespace Arachnophobia;
+
+[StaticConstructorOnStartup]
+public static class ModInfo
 {
-    [StaticConstructorOnStartup]
-    public static class ModInfo
-    {
-        public static float romSpiderFactor = 1;
-    }
+    public static float romSpiderFactor = 1;
 }

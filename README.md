@@ -1,6 +1,6 @@
 # RimofMadnessArachnophobia
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of Jecrells mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
@@ -11,19 +11,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
 - Added support for Combat Extended
 - Updated russian translation, thanks Animal Mind 
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/RimofMadnessArachnophobia]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 
 #   Adds spiders to RimWorld.
@@ -90,7 +81,7 @@ Available in: English / Deutsch (Lauri7x3) / ру́сский язы́к (kr33ma
 
 
 -   Add proper flying to Spider Queens.
--   Add &quot;milkable&quot; spider silk.
+-   Add "milkable" spider silk.
 
 
 
@@ -102,7 +93,7 @@ Questions? Comments? Suggestions? Visit our Discord: http://discord.gg/ePKnqwR
 
 
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
