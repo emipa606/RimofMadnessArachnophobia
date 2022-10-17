@@ -9,6 +9,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=950475543
 - This will be removed when/if Jecrell comes back
 - Fixed a few errors connected to spwning webs and cocoons
 - Added support for Combat Extended
+- Spiders can now be selected as venerated animals in Ideology
 - Updated russian translation, thanks Animal Mind 
 
 ![Image](https://i.imgur.com/pufA0kM.png)
@@ -103,6 +104,7 @@ Questions? Comments? Suggestions? Visit our Discord: http://discord.gg/ePKnqwR
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 

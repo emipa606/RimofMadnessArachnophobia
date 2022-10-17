@@ -42,7 +42,7 @@ public class JobDriver_SpinWeb : JobDriver
                 var breakNow = false;
                 while (i > 0)
                 {
-                    pawn.CurJob.SetTarget(TargetIndex.A,
+                    pawn?.CurJob.SetTarget(TargetIndex.A,
                         RCellFinder.RandomWanderDestFor(pawn, pawn.Position, 5f, null, Danger.Some));
                     var cellRect = GenAdj.OccupiedRect(TargetLocA, Rot4.North, WebDef.Size);
                     foreach (var cellRectCell in cellRect.Cells)
@@ -53,7 +53,7 @@ public class JobDriver_SpinWeb : JobDriver
                         }
                     }
 
-                    if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, pawn.Map).Accepted)
+                    if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, pawn?.Map).Accepted)
                     {
                         if (pawn?.Faction == null || pawn?.Faction != Faction.OfPlayerSilentFail)
                         {

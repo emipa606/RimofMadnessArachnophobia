@@ -92,12 +92,7 @@ public static class CthulhuUtility
             return false;
         }
 
-        if (thing.GetType() == type)
-        {
-            return true;
-        }
-
-        return false;
+        return thing.GetType() == type;
     }
 
     //public static float GetSanityLossRate(PawnKindDef kindDef)
@@ -137,12 +132,7 @@ public static class CthulhuUtility
             return false;
         }
 
-        if (pawn.story.DisabledWorkTagsBackstoryAndTraits.OverlapsWithOnAnyWorkType(WorkTags.Violent))
-        {
-            return false;
-        }
-
-        return true;
+        return !pawn.story.DisabledWorkTagsBackstoryAndTraits.OverlapsWithOnAnyWorkType(WorkTags.Violent);
     }
 
     public static bool IsActorAvailable(Pawn preacher, bool downedAllowed = false)
@@ -633,12 +623,7 @@ public static class CthulhuUtility
 
         var pawnSanityHediff =
             pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed(sanityLossDef));
-        if (pawnSanityHediff != null)
-        {
-            return pawnSanityHediff.Severity;
-        }
-
-        return 0f;
+        return pawnSanityHediff?.Severity ?? 0f;
     }
 
 

@@ -80,7 +80,7 @@ public class JobDriver_SpinPrey : JobDriver
         {
             var cocoon = (Building_Cocoon)thing;
             //Log.Message("3");
-            if (cocoon.NextValidPlacementSpot is { } vec && vec != default)
+            if (cocoon.NextValidPlacementSpot is var vec && vec != default)
             {
                 newPosition = vec;
             }
@@ -107,7 +107,7 @@ public class JobDriver_SpinPrey : JobDriver
                     return;
                 }
 
-                if (Prey != null && Prey.Dead)
+                if (Prey is { Dead: true })
                 {
                     pawn.CurJob.SetTarget(TargetIndex.A, Prey.Corpse);
                 }

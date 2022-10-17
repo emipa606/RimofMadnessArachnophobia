@@ -77,7 +77,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
         {
             Cocoon.CurrentDrinker = pawn as PawnWebSpinner;
 
-            if (Victim != null && (Victim?.Faction != Faction.OfPlayerSilentFail || Victim.Dead || notifiedPlayer))
+            if (Victim is { } && (Victim?.Faction != Faction.OfPlayerSilentFail || Victim.Dead || notifiedPlayer))
             {
                 return;
             }
@@ -203,7 +203,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
             if (chewer.RaceProps.intelligence < Intelligence.ToolUser &&
                 target.Thing.def.ingestible.ingestEffectEat != null)
             {
-                result = target.Thing?.def?.ingestible?.ingestEffectEat ?? null;
+                result = target.Thing?.def?.ingestible?.ingestEffectEat;
             }
 
             return result;
@@ -235,12 +235,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
             }
 
             var target = toil.actor.CurJob.GetTarget(ingestibleInd);
-            if (!target.HasThing)
-            {
-                return null;
-            }
-
-            return target.Thing.def.ingestible.ingestSound;
+            return !target.HasThing ? null : target.Thing.def.ingestible.ingestSound;
         });
     }
 

@@ -54,7 +54,7 @@ public class CompMultiHatcher : ThingComp
     public void Hatch()
     {
         var request = new PawnGenerationRequest(Props.hatcherPawn, hatcheeFaction, PawnGenerationContext.NonPlayer,
-            -1, false, true, false, false, true, false, 1f, false, true, true, false);
+            -1, false, true, false, false, true, 1f, false, true, true, false);
         for (var i = 0; i < parent.stackCount; i++)
         {
             var range = Props.hatcherNumber.RandomInRange;

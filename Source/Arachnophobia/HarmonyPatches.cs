@@ -127,17 +127,12 @@ internal static class HarmonyPatches
     public static bool Notify_MemberDied_Prefix(Faction __instance, Pawn member, DamageInfo? dinfo,
         bool wasWorldPawn)
     {
-        return !(dinfo?.Instigator is PawnWebSpinner);
+        return dinfo?.Instigator is not PawnWebSpinner;
     }
 
     // Verse.AI.Pawn_MindState
     public static bool StartManhunterBecauseOfPawnAction_PreFix(Pawn_MindState __instance)
     {
-        if (__instance.pawn is PawnWebSpinner p && p.CurJob?.def == ROMADefOf.ROMA_SpinPrey)
-        {
-            return false;
-        }
-
-        return true;
+        return __instance.pawn is not PawnWebSpinner p || p.CurJob?.def != ROMADefOf.ROMA_SpinPrey;
     }
 }

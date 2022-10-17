@@ -20,4 +20,5 @@
   <ROM_SpidersArrived>Giant spiders have arrived. A queen is among them.</ROM_SpidersArrived>
   <ROM_SpiderQueenDeath>From the spider queen's corpse, hundreds of spiders scurry loose.</ROM_SpiderQueenDeath>
   <ROM_SettingsSpiderMultiplier>Spider spawn rate multiplier</ROM_SettingsSpiderMultiplier>
+  <ROM_SettingsCurrentModVersion>Installed mod-version: {0}</ROM_SettingsCurrentModVersion>
 </LanguageData>

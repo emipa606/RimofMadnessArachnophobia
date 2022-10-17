@@ -33,12 +33,7 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
             return 0f;
         }
 
-        if (food.CurLevelPercentage < pawn.RaceProps.FoodLevelPercentageWantEat)
-        {
-            return 9.5f;
-        }
-
-        return 0f;
+        return food.CurLevelPercentage < pawn.RaceProps.FoodLevelPercentageWantEat ? 9.5f : 0f;
     }
 
     protected override Job TryGiveJob(Pawn pawn)
@@ -55,7 +50,7 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
         }
 
         var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
-        if (localCocoons != null && localCocoons.Count > 0)
+        if (localCocoons is { Count: > 0 })
         {
             Building_Cocoon closestCocoon = null;
             var shortestDistance = 9999f;
@@ -135,7 +130,7 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
             def = thingDef;
         }
 
-        var nutrition = FoodUtility.GetNutrition(thing, def);
+        var nutrition = FoodUtility.GetNutrition(pawn, thing, def);
         return new Job(JobDefOf.Ingest, thing)
         {
             count = FoodUtility.WillIngestStackCountOf(pawn, def, nutrition)

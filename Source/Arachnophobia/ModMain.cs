@@ -1,16 +1,21 @@
-﻿using UnityEngine;
+﻿using Mlie;
+using UnityEngine;
 using Verse;
 
 namespace Arachnophobia;
 
 public class ModMain : Mod
 {
+    private static string currentVersion;
     private readonly Settings settings;
 
     public ModMain(ModContentPack content) : base(content)
     {
         settings = GetSettings<Settings>();
         ModInfo.romSpiderFactor = settings.romSpiderFactor;
+        currentVersion =
+            VersionFromManifest.GetVersionFromModMetaData(
+                ModLister.GetActiveModWithIdentifier("Mlie.RimofMadnessArachnophobia"));
     }
 
     public override string SettingsCategory()
@@ -26,6 +31,12 @@ public class ModMain : Mod
 
         settings.romSpiderFactor = Widgets.HorizontalSlider(inRect.TopHalf().TopHalf().TopHalf(),
             settings.romSpiderFactor, 0.0f, 10f, false, label, null, null, 0.25f);
+        if (currentVersion != null)
+        {
+            GUI.contentColor = Color.gray;
+            Widgets.Label(inRect.TopHalf().TopHalf(), "ROM_SettingsCurrentModVersion".Translate(currentVersion));
+            GUI.contentColor = Color.white;
+        }
 
         WriteSettings();
     }

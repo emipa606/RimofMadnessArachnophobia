@@ -30,7 +30,7 @@ public class MapComponent_CocoonTracker : MapComponent
     {
     }
 
-    public HashSet<Thing> AllCocoons => new HashSet<Thing>(WildCocoons?.Concat(DomesticCocoons)?.ToList() ?? null);
+    public HashSet<Thing> AllCocoons => new HashSet<Thing>(WildCocoons?.Concat(DomesticCocoons).ToList() ?? null);
 
     public HashSet<Thing> WildCocoons
     {
@@ -40,7 +40,7 @@ public class MapComponent_CocoonTracker : MapComponent
             {
                 wildCocoons = new HashSet<Thing>(map?.listerThings?.AllThings?.FindAll(x =>
                     x is Building_Cocoon y && y.Spawned && (!x.Map?.areaManager?.Home[x.Position] ?? false) &&
-                    (!x?.IsInAnyStorage() ?? false)));
+                    (bool)!x?.IsInAnyStorage()));
             }
 
             return wildCocoons;

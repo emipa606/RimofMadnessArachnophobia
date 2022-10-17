@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using RimWorld;
 using Verse;
@@ -160,12 +159,7 @@ public class Building_Cocoon : Building_Casket
     {
         using var pawnPath = p.Map.pathFinder.FindPath(p.Position, Position,
             TraverseParms.For(p, Danger.Deadly, TraverseMode.PassDoors));
-        if (!pawnPath.Found)
-        {
-            return false;
-        }
-
-        return true;
+        return pawnPath.Found;
     }
 
     public bool isConsumableBy(Pawn pawn)
@@ -348,11 +342,11 @@ public class Building_Cocoon : Building_Casket
         }
 
         var nonSpinnerCarrier =
-            ParentHolder is Pawn_CarryTracker { pawn: { } cp } && !(cp is PawnWebSpinner) &&
+            ParentHolder is Pawn_CarryTracker { pawn: { } cp and not PawnWebSpinner } &&
             cp.Faction != Spinner.Faction
                 ? cp
                 : null;
-        var isSpinnerAvailable = Spinner != null && Spinner.Spawned && !Spinner.IsBusy &&
+        var isSpinnerAvailable = Spinner is { Spawned: true, IsBusy: false } &&
                                  Spinner.Map == nonSpinnerCarrier?.MapHeld;
         if (isSpinnerAvailable)
         {

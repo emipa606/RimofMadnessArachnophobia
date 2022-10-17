@@ -35,7 +35,7 @@ public static class Utility
     public static Thing DetermineBestCocoon(List<Thing> cocoons, PawnWebSpinner spinner)
     {
         Thing result = null;
-        if (cocoons != null && cocoons.Count > 0)
+        if (cocoons is { Count: > 0 })
         {
             result = GenClosest.ClosestThingReachable(spinner.Position, spinner.Map,
                 ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.ClosestTouch,
