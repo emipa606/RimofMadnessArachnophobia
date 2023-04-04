@@ -25,8 +25,7 @@ public class WorldComponent_ModSettings : WorldComponent
             return;
         }
 
-        Log.Message("Arachnophobia :: Spider Biome Settings Adjusted :: Current Factor: " +
-                    ModInfo.romSpiderFactor);
+        Log.Message($"Arachnophobia :: Spider Biome Settings Adjusted :: Current Factor: {ModInfo.romSpiderFactor}");
         SpiderDefsModified = true;
 
         var spiders =
@@ -45,6 +44,12 @@ public class WorldComponent_ModSettings : WorldComponent
 
         foreach (var def in spiders)
         {
+            var wildBomes = def.race.wildBiomes;
+            if (wildBomes == null)
+            {
+                continue;
+            }
+
             foreach (var record in def.race.wildBiomes)
             {
                 record.commonality *= ModInfo.romSpiderFactor;

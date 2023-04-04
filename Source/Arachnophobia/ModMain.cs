@@ -14,8 +14,7 @@ public class ModMain : Mod
         settings = GetSettings<Settings>();
         ModInfo.romSpiderFactor = settings.romSpiderFactor;
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(
-                ModLister.GetActiveModWithIdentifier("Mlie.RimofMadnessArachnophobia"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     public override string SettingsCategory()
@@ -29,7 +28,7 @@ public class ModMain : Mod
             ? "ROM_SettingsSpiderMultiplier_None".Translate()
             : "ROM_SettingsSpiderMultiplier_Num".Translate(settings.romSpiderFactor);
 
-        settings.romSpiderFactor = Widgets.HorizontalSlider(inRect.TopHalf().TopHalf().TopHalf(),
+        settings.romSpiderFactor = Widgets.HorizontalSlider_NewTemp(inRect.TopHalf().TopHalf().TopHalf(),
             settings.romSpiderFactor, 0.0f, 10f, false, label, null, null, 0.25f);
         if (currentVersion != null)
         {

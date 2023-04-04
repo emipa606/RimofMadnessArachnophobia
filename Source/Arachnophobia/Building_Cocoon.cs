@@ -236,17 +236,11 @@ public class Building_Cocoon : Building_Casket
         {
             if (Faction == Faction.OfPlayer || placer?.Faction == Faction.OfPlayer)
             {
-                if (!cocoons.DomesticCocoons.Contains(this))
-                {
-                    cocoons.DomesticCocoons.Add(this);
-                }
+                cocoons.DomesticCocoons.Add(this);
             }
             else
             {
-                if (!cocoons.WildCocoons.Contains(this))
-                {
-                    cocoons.WildCocoons.Add(this);
-                }
+                cocoons.WildCocoons.Add(this);
             }
         }
 

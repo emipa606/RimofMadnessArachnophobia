@@ -1,5 +1,8 @@
 # Changelog for RimofMadnessArachnophobia
 
+1.4.2 - Should no longer have issues with mods that changes spawn-rates of biomes
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests.
 Used DeepL to update translations for ChineseSimplified, French, German, Portuguese, Russian
 

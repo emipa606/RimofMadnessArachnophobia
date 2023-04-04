@@ -163,7 +163,7 @@ public static class CthulhuUtility
             return ResultFalseWithReport(s);
         }
 
-        s.Append("ActorAvailble: Passed downed check & downedAllowed = " + downedAllowed);
+        s.Append($"ActorAvailble: Passed downed check & downedAllowed = {downedAllowed}");
         s.AppendLine();
         if (preacher.Drafted)
         {
@@ -345,10 +345,10 @@ public static class CthulhuUtility
 
         goto IL_A5;
         IL_84:
-        Log.Warning("Didn't get age for " + pawn);
+        Log.Warning($"Didn't get age for {pawn}");
         return;
         IL_95:
-        Log.Error("Tried 100 times to generate age for " + pawn);
+        Log.Error($"Tried 100 times to generate age for {pawn}");
         IL_A5:
         pawn.ageTracker.AgeBiologicalTicks = (long)(num2 * 3600000f) + Rand.Range(0, 3600000);
         int num3;

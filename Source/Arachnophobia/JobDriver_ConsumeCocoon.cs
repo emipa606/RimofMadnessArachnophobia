@@ -77,7 +77,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
         {
             Cocoon.CurrentDrinker = pawn as PawnWebSpinner;
 
-            if (Victim is { } && (Victim?.Faction != Faction.OfPlayerSilentFail || Victim.Dead || notifiedPlayer))
+            if (Victim is not null && (Victim.Faction != Faction.OfPlayerSilentFail || Victim.Dead || notifiedPlayer))
             {
                 return;
             }
@@ -123,7 +123,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
                         var damageToxic = (int)(25f * pawn.RaceProps.baseBodySize);
                         for (var i = 0; i < 2; i++)
                         {
-                            var randomInternalOrgan = Victim?.health?.hediffSet?.GetNotMissingParts()
+                            var randomInternalOrgan = Victim.health?.hediffSet?.GetNotMissingParts()
                                 .InRandomOrder().FirstOrDefault(x => x.depth == BodyPartDepth.Inside);
                             if (!Victim.Destroyed || !Victim.Dead)
                             {

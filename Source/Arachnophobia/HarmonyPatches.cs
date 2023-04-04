@@ -43,7 +43,7 @@ internal static class HarmonyPatches
     // RimWorld.Faction
     public static void Notify_MemberTookDamage_PostFix(Faction __instance, Pawn member, DamageInfo dinfo)
     {
-        if (dinfo.Instigator is Pawn { CurJob: { } } p && p.CurJob.def == ROMADefOf.ROMA_SpinPrey)
+        if (dinfo.Instigator is Pawn { CurJob: not null } p && p.CurJob.def == ROMADefOf.ROMA_SpinPrey)
         {
             //Log.Message("Spiders GOOO");
             AccessTools.Method(typeof(Faction), "TookDamageFromPredator").Invoke(__instance, new object[] { p });

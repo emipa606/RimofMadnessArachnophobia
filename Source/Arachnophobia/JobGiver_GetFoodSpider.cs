@@ -92,7 +92,7 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
 
 
         var desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
-        if (!FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out var thing, out var def))
+        if (!FoodUtility.TryFindBestFoodSourceFor_NewTemp(pawn, pawn, desperate, out var thing, out var def))
         {
             return null;
         }
@@ -120,7 +120,7 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
                 }
             }
 
-            thing = FoodUtility.BestFoodSourceOnMap(pawn, pawn, desperate, out var thingDef,
+            thing = FoodUtility.BestFoodSourceOnMap_NewTemp(pawn, pawn, desperate, out var thingDef,
                 FoodPreferability.MealLavish, false, !pawn.IsTeetotaler(), false, false, false);
             if (thing == null)
             {
