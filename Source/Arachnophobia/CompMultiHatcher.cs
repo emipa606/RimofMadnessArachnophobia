@@ -75,7 +75,8 @@ public class CompMultiHatcher : ThingComp
                             if (pawn.playerSettings != null && hatcheeParent.playerSettings != null &&
                                 hatcheeParent.Faction == hatcheeFaction)
                             {
-                                pawn.playerSettings.AreaRestriction = hatcheeParent.playerSettings.AreaRestriction;
+                                pawn.playerSettings.AreaRestrictionInPawnCurrentMap =
+                                    hatcheeParent.playerSettings.AreaRestrictionInPawnCurrentMap;
                             }
 
                             if (pawn.RaceProps.IsFlesh)

@@ -28,7 +28,7 @@ public class ModMain : Mod
             ? "ROM_SettingsSpiderMultiplier_None".Translate()
             : "ROM_SettingsSpiderMultiplier_Num".Translate(settings.romSpiderFactor);
 
-        settings.romSpiderFactor = Widgets.HorizontalSlider_NewTemp(inRect.TopHalf().TopHalf().TopHalf(),
+        settings.romSpiderFactor = Widgets.HorizontalSlider(inRect.TopHalf().TopHalf().TopHalf(),
             settings.romSpiderFactor, 0.0f, 10f, false, label, null, null, 0.25f);
         if (currentVersion != null)
         {

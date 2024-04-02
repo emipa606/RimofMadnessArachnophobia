@@ -69,7 +69,7 @@ public class JobDriver_SpinPrey : JobDriver
         }
 
         //Log.Message("1");
-        if (localCocoons == null || localCocoons.Count <= 0)
+        if (localCocoons is not { Count: > 0 })
         {
             return newPosition;
         }
@@ -93,7 +93,7 @@ public class JobDriver_SpinPrey : JobDriver
     protected override IEnumerable<Toil> MakeNewToils()
     {
         /*
-         * 
+         *
          *  Toil Configurations
          *
          */
@@ -165,7 +165,7 @@ public class JobDriver_SpinPrey : JobDriver
                         return;
                     }
 
-                    var unused = ThingDefOf.MedicineHerbal;
+                    _ = ThingDefOf.MedicineHerbal;
                     var quality = 0.5f; //Not a doctor or attentive to human needs
                     var hediffsToTend = new List<Hediff>();
                     var hediffs = Prey.health.hediffSet.hediffs;
@@ -236,7 +236,7 @@ public class JobDriver_SpinPrey : JobDriver
 
 
         /*
-         * 
+         *
          *  Toil Execution
          *
          */
@@ -247,6 +247,24 @@ public class JobDriver_SpinPrey : JobDriver
             atomicWithPrevious = true,
             defaultCompleteMode = ToilCompleteMode.Instant
         };
+
+        yield return Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, onHitAction)
+            .JumpIf(() => Prey.Downed || Prey.Dead, prepareToSpin).FailOn(() =>
+                Find.TickManager.TicksGame > startTick + 5000 &&
+                (job.GetTarget(TargetIndex.A).Cell - pawn.Position).LengthHorizontalSquared > 4f);
+        yield return prepareToSpin.FailOn(() => Prey == null);
+        yield return gotoBody.FailOn(() => Prey == null);
+        yield return spinDelay.FailOn(() => Prey == null);
+        yield return spinBody.FailOn(() => Prey == null);
+        yield return pickupCocoon;
+        yield return relocateCocoon;
+        yield return dropCocoon;
+        yield break;
+
+        //float durationMultiplier = 1f / this.pawn.GetStatValue(StatDefOf.EatingSpeed, true);
+        //yield return Toils_Ingest.ChewIngestible(this.pawn, durationMultiplier, TargetIndex.A, TargetIndex.None).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+        //yield return Toils_Ingest.FinalizeIngest(this.pawn, TargetIndex.A);
+        //yield return Toils_Jump.JumpIf(gotoCorpse, () => this.pawn.needs.food.CurLevelPercentage < 0.9f);
 
         void onHitAction()
         {
@@ -268,23 +286,6 @@ public class JobDriver_SpinPrey : JobDriver
 
             firstHit = false;
         }
-
-        yield return Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, onHitAction)
-            .JumpIf(() => Prey.Downed || Prey.Dead, prepareToSpin).FailOn(() =>
-                Find.TickManager.TicksGame > startTick + 5000 &&
-                (job.GetTarget(TargetIndex.A).Cell - pawn.Position).LengthHorizontalSquared > 4f);
-        yield return prepareToSpin.FailOn(() => Prey == null);
-        yield return gotoBody.FailOn(() => Prey == null);
-        yield return spinDelay.FailOn(() => Prey == null);
-        yield return spinBody.FailOn(() => Prey == null);
-        yield return pickupCocoon;
-        yield return relocateCocoon;
-        yield return dropCocoon;
-
-        //float durationMultiplier = 1f / this.pawn.GetStatValue(StatDefOf.EatingSpeed, true);
-        //yield return Toils_Ingest.ChewIngestible(this.pawn, durationMultiplier, TargetIndex.A, TargetIndex.None).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-        //yield return Toils_Ingest.FinalizeIngest(this.pawn, TargetIndex.A);
-        //yield return Toils_Jump.JumpIf(gotoCorpse, () => this.pawn.needs.food.CurLevelPercentage < 0.9f);
     }
 
     public override bool TryMakePreToilReservations(bool showResult)

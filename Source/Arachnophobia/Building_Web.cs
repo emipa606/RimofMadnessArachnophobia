@@ -8,7 +8,7 @@ namespace Arachnophobia;
 
 public class Building_Web : Building
 {
-    private readonly HashSet<Pawn> touchingPawns = new HashSet<Pawn>();
+    private readonly HashSet<Pawn> touchingPawns = [];
     private PawnWebSpinner spinner;
 
     public PawnWebSpinner Spinner
@@ -95,12 +95,11 @@ public class Building_Web : Building
         var thingList = new HashSet<Thing>(Position.GetThingList(Map));
         foreach (var t in thingList)
         {
-            if (t is not Pawn pawn || pawn is PawnWebSpinner || touchingPawns.Contains(pawn))
+            if (t is not Pawn pawn || pawn is PawnWebSpinner || !touchingPawns.Add(pawn))
             {
                 continue;
             }
 
-            touchingPawns.Add(pawn);
             WebEffect(pawn);
         }
 

@@ -13,21 +13,21 @@ internal static class HarmonyPatches
     {
         var harmony = new Harmony("rimworld.jecrell.arachnophobia");
         harmony.Patch(AccessTools.Method(typeof(Pawn_MindState), "StartManhunterBecauseOfPawnAction"),
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("StartManhunterBecauseOfPawnAction_PreFix")));
-        harmony.Patch(AccessTools.Method(typeof(Faction), "Notify_MemberDied"),
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("Notify_MemberDied_Prefix")));
-        harmony.Patch(AccessTools.Method(typeof(CompEggLayer), "ProduceEgg"), null,
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("ProduceEgg_PostFix")));
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(StartManhunterBecauseOfPawnAction_PreFix))));
+        harmony.Patch(AccessTools.Method(typeof(Faction), nameof(Faction.Notify_MemberDied)),
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(Notify_MemberDied_Prefix))));
+        harmony.Patch(AccessTools.Method(typeof(CompEggLayer), nameof(CompEggLayer.ProduceEgg)), null,
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(ProduceEgg_PostFix))));
         harmony.Patch(AccessTools.Method(typeof(JobGiver_ReactToCloseMeleeThreat), "IsHunting"), null,
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("IsHunting_PostFix")));
-        harmony.Patch(AccessTools.Method(typeof(PawnUtility), "IsFighting"), null,
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("IsFighting_PostFix")));
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(IsHunting_PostFix))));
+        harmony.Patch(AccessTools.Method(typeof(PawnUtility), nameof(PawnUtility.IsFighting)), null,
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(IsFighting_PostFix))));
         harmony.Patch(AccessTools.Method(typeof(GenHostility), "GetPreyOfMyFaction"), null,
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("GetPreyOfMyFaction_PostFix")));
-        harmony.Patch(AccessTools.Method(typeof(Faction), "Notify_MemberTookDamage"), null,
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("Notify_MemberTookDamage_PostFix")));
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(GetPreyOfMyFaction_PostFix))));
+        harmony.Patch(AccessTools.Method(typeof(Faction), nameof(Faction.Notify_MemberTookDamage)), null,
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(Notify_MemberTookDamage_PostFix))));
         harmony.Patch(AccessTools.Method(typeof(Pawn_MindState), "CanStartFleeingBecauseOfPawnAction"), null,
-            new HarmonyMethod(typeof(HarmonyPatches).GetMethod("CanStartFleeingBecauseOfPawnAction")));
+            new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(CanStartFleeingBecauseOfPawnAction))));
         harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 
@@ -46,7 +46,7 @@ internal static class HarmonyPatches
         if (dinfo.Instigator is Pawn { CurJob: not null } p && p.CurJob.def == ROMADefOf.ROMA_SpinPrey)
         {
             //Log.Message("Spiders GOOO");
-            AccessTools.Method(typeof(Faction), "TookDamageFromPredator").Invoke(__instance, new object[] { p });
+            AccessTools.Method(typeof(Faction), "TookDamageFromPredator").Invoke(__instance, [p]);
         }
     }
 

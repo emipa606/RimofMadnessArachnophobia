@@ -24,7 +24,7 @@ public static class Utility
         var domesticCocoons = map.GetComponent<MapComponent_CocoonTracker>().DomesticCocoons;
         if (domesticCocoons != null && t.Faction == Faction.OfPlayerSilentFail)
         {
-            return new HashSet<Thing>(domesticCocoons.Where(x => x.PositionHeld.InAllowedArea(t as Pawn)));
+            return [..domesticCocoons.Where(x => x.PositionHeld.InAllowedArea(t as Pawn))];
         }
 
         //Other cases should not exist.

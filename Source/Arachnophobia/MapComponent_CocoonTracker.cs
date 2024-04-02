@@ -5,7 +5,7 @@ using Verse;
 
 namespace Arachnophobia;
 
-public class MapComponent_CocoonTracker : MapComponent
+public class MapComponent_CocoonTracker(Map map) : MapComponent(map)
 {
     private HashSet<Thing> domesticCocoons;
     public bool isGiantSpiderPair;
@@ -26,11 +26,7 @@ public class MapComponent_CocoonTracker : MapComponent
     //    //("Arachophobia :: No cocoons exist");
     //    return allCocoons;
 
-    public MapComponent_CocoonTracker(Map map) : base(map)
-    {
-    }
-
-    public HashSet<Thing> AllCocoons => new HashSet<Thing>(WildCocoons?.Concat(DomesticCocoons).ToList() ?? null);
+    public HashSet<Thing> AllCocoons => [..WildCocoons.Concat(DomesticCocoons).ToList()];
 
     public HashSet<Thing> WildCocoons
     {
@@ -38,9 +34,12 @@ public class MapComponent_CocoonTracker : MapComponent
         {
             if (wildCocoons == null)
             {
-                wildCocoons = new HashSet<Thing>(map?.listerThings?.AllThings?.FindAll(x =>
-                    x is Building_Cocoon y && y.Spawned && (!x.Map?.areaManager?.Home[x.Position] ?? false) &&
-                    (bool)!x?.IsInAnyStorage()));
+                wildCocoons =
+                [
+                    ..map?.listerThings?.AllThings?.FindAll(x =>
+                        x is Building_Cocoon y && y.Spawned && (!x.Map?.areaManager?.Home[x.Position] ?? false) &&
+                        !x.IsInAnyStorage())
+                ];
             }
 
             return wildCocoons;
@@ -57,8 +56,11 @@ public class MapComponent_CocoonTracker : MapComponent
             }
 
             var allTemp = map?.listerThings?.AllThings?.FindAll(x => x is Building_Cocoon { Spawned: true });
-            domesticCocoons = new HashSet<Thing>(allTemp?.FindAll(x =>
-                (x.Map?.areaManager?.Home[x.Position] ?? false) || (x?.IsInAnyStorage() ?? false)));
+            domesticCocoons =
+            [
+                ..allTemp?.FindAll(x =>
+                    (x.Map?.areaManager?.Home[x.Position] ?? false) || x.IsInAnyStorage())
+            ];
 
             return domesticCocoons;
         }

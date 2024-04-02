@@ -6,7 +6,7 @@ using Verse;
 
 namespace Arachnophobia;
 
-[HarmonyPatch(typeof(PreceptWorker_Animal), "ThingDefs", MethodType.Getter)]
+[HarmonyPatch(typeof(PreceptWorker_Animal), nameof(PreceptWorker_Animal.ThingDefs), MethodType.Getter)]
 public static class PreceptWorker_Animal_ThingDefs
 {
     public static IEnumerable<PreceptThingChance> Postfix(IEnumerable<PreceptThingChance> values)

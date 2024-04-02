@@ -4,12 +4,8 @@ using Verse;
 
 namespace Arachnophobia;
 
-public class WorldComponent_ModSettings : WorldComponent
+public class WorldComponent_ModSettings(World world) : WorldComponent(world)
 {
-    public WorldComponent_ModSettings(World world) : base(world)
-    {
-    }
-
     public bool SpiderDefsModified { get; set; }
 
     public override void WorldComponentTick()

@@ -1,5 +1,8 @@
 # Changelog for RimofMadnessArachnophobia
 
+1.5.0 - Mod updated for 1.5 and passed autotests
+
+
 1.4.2 - Should no longer have issues with mods that changes spawn-rates of biomes
 
 

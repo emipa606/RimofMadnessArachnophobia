@@ -1,11 +1,12 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.AI.Group;
 
 namespace Arachnophobia;
 
 public class DeathActionWorker_QueenDeath : DeathActionWorker
 {
-    public override void PawnDied(Corpse corpse)
+    public override void PawnDied(Corpse corpse, Lord prevLord)
     {
         var hostFaction = corpse?.Faction;
         if (hostFaction == Faction.OfPlayerSilentFail)
