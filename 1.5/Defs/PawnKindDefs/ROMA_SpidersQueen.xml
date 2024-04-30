@@ -166,6 +166,10 @@
           <drawSize>3.5</drawSize>
           <color>(160,130,130)</color>
         </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Dessicated_Megascarab</texPath>
+          <drawSize>3</drawSize>
+        </dessicatedBodyGraphicData>
       </li>
       <li>
         <label>juvenile giant queen spider</label>
@@ -174,6 +178,10 @@
           <drawSize>4.5</drawSize>
           <color>(160,130,130)</color>
         </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Dessicated_Megascarab</texPath>
+          <drawSize>4</drawSize>
+        </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
@@ -185,6 +193,10 @@
             <offset>(0,0,-0.05)</offset>
           </shadowData>
         </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Dessicated_Megascarab</texPath>
+          <drawSize>4.5</drawSize>
+        </dessicatedBodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>

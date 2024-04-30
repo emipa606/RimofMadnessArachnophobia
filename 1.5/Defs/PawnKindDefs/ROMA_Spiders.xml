@@ -121,6 +121,10 @@
           <drawSize>0.85</drawSize>
           <color>(80,80,80)</color>
         </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Dessicated_Megascarab</texPath>
+          <drawSize>0.85</drawSize>
+        </dessicatedBodyGraphicData>
       </li>
       <li>
         <label>juvenile spider</label>
@@ -129,6 +133,10 @@
           <drawSize>0.9</drawSize>
           <color>(80,80,80)</color>
         </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Dessicated_Megascarab</texPath>
+          <drawSize>0.9</drawSize>
+        </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
@@ -145,6 +153,10 @@
           <texPath>Things/Pawn/Animal/Spider/ROM_Spider</texPath>
           <drawSize>1.15</drawSize>
         </femaleGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Dessicated_Megascarab</texPath>
+          <drawSize>1.15</drawSize>
+        </dessicatedBodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>
