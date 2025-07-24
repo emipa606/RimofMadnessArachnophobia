@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 3067905817
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7ec62e37c7315b32ae04a5a04827463e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 7ec62e37c7315b32ae04a5a04827463e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/SpiderQueen/ROM_SpiderQueen_south.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Building/Natural/ROMCocoonGiant/ROM__CocoonGiant.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/OldVersion/ROM_Spider_north.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Filth/Cobwebs/CobwebsB.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/SpiderQueen/ROM_SpiderQueen_north.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/ROM_Spider_north.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Building/Natural/Web/ROM_SpiderWeb.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/AltEyes/ROM_Spider_south2.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Building/Natural/ROMCocoonEmpty/ROM__CocoonEmpty.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Building/Natural/ROMCocoon/ROM__Cocoon.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Building/Natural/ROMCocoonGiantEmpty/ROM__CocoonGiantEmpty.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Filth/Cobwebs/CobwebsC.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Item/Resource/AnimalProductRaw/EggSack/EggSack.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/ROM_Spider_south.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/OldVersion/ROM_Spider_south
+  - Copy.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/OldVersion/ROM_Spider_east.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/SpiderQueen/ROM_SpiderQueen_east.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Pawn/Animal/Spider/ROM_Spider_east.png
+- Assets/Data/Mlie.RimofMadnessArachnophobia/Textures/Things/Filth/Cobwebs/CobwebsA.png
+Dependencies: []

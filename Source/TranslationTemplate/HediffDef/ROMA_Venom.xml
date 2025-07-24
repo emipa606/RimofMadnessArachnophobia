@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: neurotoxin buildup -->
+  <ROMA_Neurotoxin.label>neurotoxin buildup</ROMA_Neurotoxin.label>
+  <!-- EN: neurotoxin buildup -->
+  <ROMA_Neurotoxin.description>neurotoxin buildup</ROMA_Neurotoxin.description>
+  <!-- EN: initial -->
+  <ROMA_Neurotoxin.stages.initial-0.label>initial</ROMA_Neurotoxin.stages.initial-0.label>
+  <!-- EN: initial -->
+  <ROMA_Neurotoxin.stages.initial-1.label>initial</ROMA_Neurotoxin.stages.initial-1.label>
+  <!-- EN: minor -->
+  <ROMA_Neurotoxin.stages.minor.label>minor</ROMA_Neurotoxin.stages.minor.label>
+  <!-- EN: moderate -->
+  <ROMA_Neurotoxin.stages.moderate.label>moderate</ROMA_Neurotoxin.stages.moderate.label>
+  <!-- EN: serious -->
+  <ROMA_Neurotoxin.stages.serious.label>serious</ROMA_Neurotoxin.stages.serious.label>
+  <!-- EN: extreme -->
+  <ROMA_Neurotoxin.stages.extreme.label>extreme</ROMA_Neurotoxin.stages.extreme.label>
+</LanguageData>

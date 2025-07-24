@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: giant spider -->
+  <ROMA_SpiderRaceGiant.label>giant spider</ROMA_SpiderRaceGiant.label>
+  <!-- EN: This monstrous muffalo-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite. -->
+  <ROMA_SpiderRaceGiant.description>This monstrous muffalo-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite.</ROMA_SpiderRaceGiant.description>
+  <!-- EN: arachnid meat -->
+  <ROMA_SpiderRaceGiant.race.meatLabel>arachnid meat</ROMA_SpiderRaceGiant.race.meatLabel>
+  <!-- EN: fangs -->
+  <ROMA_SpiderRaceGiant.tools.fangs.label>fangs</ROMA_SpiderRaceGiant.tools.fangs.label>
+  <!-- EN: front left leg -->
+  <ROMA_SpiderRaceGiant.tools.front_left_leg.label>front left leg</ROMA_SpiderRaceGiant.tools.front_left_leg.label>
+  <!-- EN: front right leg -->
+  <ROMA_SpiderRaceGiant.tools.front_right_leg.label>front right leg</ROMA_SpiderRaceGiant.tools.front_right_leg.label>
+</LanguageData>

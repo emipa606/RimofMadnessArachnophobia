@@ -113,7 +113,7 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
             if (building != null)
             {
                 var hopperSgp = building as ISlotGroupParent;
-                var job = WorkGiver_CookFillHopper.HopperFillFoodJob(pawn, hopperSgp);
+                var job = WorkGiver_CookFillHopper.HopperFillFoodJob(pawn, hopperSgp, false);
                 if (job != null)
                 {
                     return job;

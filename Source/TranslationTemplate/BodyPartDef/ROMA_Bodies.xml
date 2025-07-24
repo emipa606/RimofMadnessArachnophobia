@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: abdomen -->
+  <ROMA_Abdomen.label>abdomen</ROMA_Abdomen.label>
+  <!-- EN: caphalothorax -->
+  <ROMA_Cephalothorax.label>caphalothorax</ROMA_Cephalothorax.label>
+  <!-- EN: left pedipalp -->
+  <ROMA_LeftPedipalp.label>left pedipalp</ROMA_LeftPedipalp.label>
+  <!-- EN: right pedipalp -->
+  <ROMA_RightPedipalp.label>right pedipalp</ROMA_RightPedipalp.label>
+  <!-- EN: second middle left leg -->
+  <ROMA_SecondMiddleLeftInsectLeg.label>second middle left leg</ROMA_SecondMiddleLeftInsectLeg.label>
+  <!-- EN: second middle right leg -->
+  <ROMA_SecondMiddleRightInsectLeg.label>second middle right leg</ROMA_SecondMiddleRightInsectLeg.label>
+  <!-- EN: spinneret -->
+  <ROMA_Spinneret.label>spinneret</ROMA_Spinneret.label>
+  <!-- EN: stinger -->
+  <ROMA_Stinger.label>stinger</ROMA_Stinger.label>
+</LanguageData>

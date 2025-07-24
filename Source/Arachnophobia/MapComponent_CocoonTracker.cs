@@ -32,15 +32,12 @@ public class MapComponent_CocoonTracker(Map map) : MapComponent(map)
     {
         get
         {
-            if (wildCocoons == null)
-            {
-                wildCocoons =
-                [
-                    ..map?.listerThings?.AllThings?.FindAll(x =>
-                        x is Building_Cocoon y && y.Spawned && (!x.Map?.areaManager?.Home[x.Position] ?? false) &&
-                        !x.IsInAnyStorage())
-                ];
-            }
+            wildCocoons ??=
+            [
+                ..map?.listerThings?.AllThings?.FindAll(x =>
+                    x is Building_Cocoon { Spawned: true } && (!x.Map?.areaManager?.Home[x.Position] ?? false) &&
+                    !x.IsInAnyStorage())!
+            ];
 
             return wildCocoons;
         }
@@ -59,7 +56,7 @@ public class MapComponent_CocoonTracker(Map map) : MapComponent(map)
             domesticCocoons =
             [
                 ..allTemp?.FindAll(x =>
-                    (x.Map?.areaManager?.Home[x.Position] ?? false) || x.IsInAnyStorage())
+                    (x.Map?.areaManager?.Home[x.Position] ?? false) || x.IsInAnyStorage())!
             ];
 
             return domesticCocoons;

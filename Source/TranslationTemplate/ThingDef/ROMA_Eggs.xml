@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: spider egg sack -->
+  <ROMA_SpiderEgg.label>spider egg sack</ROMA_SpiderEgg.label>
+  <!-- EN: An egg sack filled with baby spiders. -->
+  <ROMA_SpiderEgg.description>An egg sack filled with baby spiders.</ROMA_SpiderEgg.description>
+  <!-- EN: giant spider egg sack -->
+  <ROMA_SpiderEggGiant.label>giant spider egg sack</ROMA_SpiderEggGiant.label>
+  <!-- EN: An egg sack filled with baby giant spiders. -->
+  <ROMA_SpiderEggGiant.description>An egg sack filled with baby giant spiders.</ROMA_SpiderEggGiant.description>
+</LanguageData>

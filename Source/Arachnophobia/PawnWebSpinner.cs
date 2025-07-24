@@ -14,7 +14,7 @@ public class PawnWebSpinner : Pawn
     private int webPeriod = -1;
     private int websMade;
 
-    public int WebPeriod
+    private int WebPeriod
     {
         get
         {
@@ -50,11 +50,11 @@ public class PawnWebSpinner : Pawn
         CurJob?.def == ROMADefOf.ROMA_ConsumeCocoon;
 
     public bool IsMakingCocoon => CurJob?.def == ROMADefOf.ROMA_SpinPrey;
-    public bool IsMakingWeb => CurJob?.def == ROMADefOf.ROMA_SpinWeb;
+    private bool IsMakingWeb => CurJob?.def == ROMADefOf.ROMA_SpinWeb;
 
-    public bool CanMakeWeb => !IsMakingWeb && !IsBusy && ageTracker.CurLifeStageIndex > 1;
+    private bool CanMakeWeb => !IsMakingWeb && !IsBusy && ageTracker.CurLifeStageIndex > 1;
 
-    public void MakeWeb()
+    private void MakeWeb()
     {
         if (web != null || !Spawned || Downed || Dead || !CanMakeWeb)
         {
@@ -96,7 +96,7 @@ public class PawnWebSpinner : Pawn
 
     #region Overrides
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (Find.TickManager.TicksGame % 60 == 0 && !firstTick)

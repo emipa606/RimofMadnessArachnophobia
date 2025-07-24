@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: spider silk -->
+  <ROM_SpiderSilk.label>spider silk</ROM_SpiderSilk.label>
+  <!-- EN: Fabric spun from fibers extracted from spiders. Similar to devilstrand, this is very tough, stronger than steel, but insulates no better than cloth. -->
+  <ROM_SpiderSilk.description>Fabric spun from fibers extracted from spiders. Similar to devilstrand, this is very tough, stronger than steel, but insulates no better than cloth.</ROM_SpiderSilk.description>
+</LanguageData>

@@ -15,7 +15,7 @@ public class Building_Cocoon : Building_Casket
     private Graphic cachedGraphicFull;
     private PawnWebSpinner currentDrinker;
 
-    public int lastEscapeAttempt;
+    private int lastEscapeAttempt;
 
     private IntVec3 nextValidPlacementSpot;
     private bool resolvingCurrently;
@@ -128,36 +128,30 @@ public class Building_Cocoon : Building_Casket
 
             if (Victim == null)
             {
-                if (cachedGraphicEmpty == null)
-                {
-                    cachedGraphicEmpty = GraphicDatabase.Get<Graphic_Single>(def.graphicData.texPath,
-                        ShaderDatabase.Cutout, def.graphicData.drawSize, DrawColor, DrawColorTwo, def.graphicData);
-                }
+                cachedGraphicEmpty ??= GraphicDatabase.Get<Graphic_Single>(def.graphicData.texPath,
+                    ShaderDatabase.Cutout, def.graphicData.drawSize, DrawColor, DrawColorTwo, def.graphicData);
 
                 return cachedGraphicEmpty;
             }
 
-            if (cachedGraphicFull == null)
-            {
-                cachedGraphicFull = GraphicDatabase.Get<Graphic_Single>(def.building.fullGraveGraphicData.texPath,
-                    ShaderDatabase.Cutout, def.building.fullGraveGraphicData.drawSize, DrawColor, DrawColorTwo,
-                    def.building.fullGraveGraphicData);
-            }
+            cachedGraphicFull ??= GraphicDatabase.Get<Graphic_Single>(def.building.fullGraveGraphicData.texPath,
+                ShaderDatabase.Cutout, def.building.fullGraveGraphicData.drawSize, DrawColor, DrawColorTwo,
+                def.building.fullGraveGraphicData);
 
             return cachedGraphicFull;
         }
     }
 
-    public bool isConsumable =>
+    private bool isConsumable =>
         Victim != null &&
         //Victim.IngestibleNow &&
         Spawned &&
         !Destroyed &&
         !MapHeld.physicalInteractionReservationManager.IsReserved(this);
 
-    public bool isPathableBy(Pawn p)
+    private bool isPathableBy(Pawn p)
     {
-        using var pawnPath = p.Map.pathFinder.FindPath(p.Position, Position,
+        using var pawnPath = p.Map.pathFinder.FindPathNow(p.Position, Position,
             TraverseParms.For(p, Danger.Deadly, TraverseMode.PassDoors));
         return pawnPath.Found;
     }
@@ -184,7 +178,7 @@ public class Building_Cocoon : Building_Casket
     /// <summary>
     ///     Finds a new position for a potential neighboring cocoon.
     /// </summary>
-    public void ResolvedNeighborPos()
+    private void ResolvedNeighborPos()
     {
         resolvingCurrently = true;
         var result = NextValidPlacementSpot;
@@ -219,7 +213,7 @@ public class Building_Cocoon : Building_Casket
     }
 
     //Wild spiders || Faction spiders && player spiders must have access to cocoons
-    public bool playerFactionExceptions(PawnWebSpinner y)
+    private bool playerFactionExceptions(PawnWebSpinner y)
     {
         return y?.Faction == null ||
                Victim?.Faction != y.Faction && y.Faction == Faction.OfPlayerSilentFail &&
@@ -230,7 +224,7 @@ public class Building_Cocoon : Building_Casket
     ///     Adds this cocoon to the lists in the MapComponent
     /// </summary>
     /// <param name="placer"></param>
-    public void Notify_Placed(Pawn placer)
+    private void Notify_Placed(Pawn placer)
     {
         if (Map.GetComponent<MapComponent_CocoonTracker>() is { } cocoons)
         {
@@ -251,7 +245,7 @@ public class Building_Cocoon : Building_Casket
     ///     Removes this cocoon to the lists in the MapComponent
     /// </summary>
     /// <param name="placer"></param>
-    public void Notify_Removed(Pawn placer)
+    private void Notify_Removed(Pawn placer)
     {
         if (Map.GetComponent<MapComponent_CocoonTracker>() is { } cocoons)
         {
@@ -327,7 +321,7 @@ public class Building_Cocoon : Building_Casket
         return true;
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (Find.TickManager.TicksGame % 250 != 0)

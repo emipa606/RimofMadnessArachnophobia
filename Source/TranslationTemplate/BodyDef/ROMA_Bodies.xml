@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: spider-like -->
+  <ROMA_SpiderBody.label>spider-like</ROMA_SpiderBody.label>
+  <!-- EN: left anterior lateral eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_anterior_lateral_eye.customLabel>left anterior lateral eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_anterior_lateral_eye.customLabel>
+  <!-- EN: right anterior lateral eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_anterior_lateral_eye.customLabel>right anterior lateral eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_anterior_lateral_eye.customLabel>
+  <!-- EN: left anterior median eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_anterior_median_eye.customLabel>left anterior median eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_anterior_median_eye.customLabel>
+  <!-- EN: right anterior median eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_anterior_median_eye.customLabel>right anterior median eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_anterior_median_eye.customLabel>
+  <!-- EN: left posterior lateral eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_posterior_lateral_eye.customLabel>left posterior lateral eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_posterior_lateral_eye.customLabel>
+  <!-- EN: right posterier lateral eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_posterier_lateral_eye.customLabel>right posterier lateral eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_posterier_lateral_eye.customLabel>
+  <!-- EN: left posterior median eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_posterior_median_eye.customLabel>left posterior median eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.left_posterior_median_eye.customLabel>
+  <!-- EN: right posterior median eye -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_posterior_median_eye.customLabel>right posterior median eye</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.InsectHead.parts.right_posterior_median_eye.customLabel>
+  <!-- EN: front left leg -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.front_left_leg.customLabel>front left leg</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.front_left_leg.customLabel>
+  <!-- EN: front right leg -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.front_right_leg.customLabel>front right leg</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.front_right_leg.customLabel>
+  <!-- EN: middle left leg -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.middle_left_leg.customLabel>middle left leg</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.middle_left_leg.customLabel>
+  <!-- EN: middle right leg -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.middle_right_leg.customLabel>middle right leg</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.middle_right_leg.customLabel>
+  <!-- EN: rear left leg -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.rear_left_leg.customLabel>rear left leg</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.rear_left_leg.customLabel>
+  <!-- EN: rear right leg -->
+  <ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.rear_right_leg.customLabel>rear right leg</ROMA_SpiderBody.corePart.parts.ROMA_Cephalothorax.parts.rear_right_leg.customLabel>
+</LanguageData>

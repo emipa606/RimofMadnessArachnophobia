@@ -15,11 +15,11 @@ public class CompMultiHatcher : ThingComp
 
     public Pawn otherParent;
 
-    public CompProperties_MultiHatcher Props => (CompProperties_MultiHatcher)props;
+    private CompProperties_MultiHatcher Props => (CompProperties_MultiHatcher)props;
 
     private CompTemperatureRuinable FreezerComp => parent.GetComp<CompTemperatureRuinable>();
 
-    protected bool TemperatureDamaged
+    private bool TemperatureDamaged
     {
         get
         {
@@ -51,7 +51,7 @@ public class CompMultiHatcher : ThingComp
         //}
     }
 
-    public void Hatch()
+    private void Hatch()
     {
         var request = new PawnGenerationRequest(Props.hatcherPawn, hatcheeFaction, PawnGenerationContext.NonPlayer,
             -1, false, true, false, false, true, 1f, false, true, true, false);
@@ -139,9 +139,9 @@ public class CompMultiHatcher : ThingComp
         }
     }
 
-    public override void PostPostGeneratedForTrader(TraderKindDef trader, int forTile, Faction forFaction)
+    public override void PostPostGeneratedForTrader(TraderKindDef trader, PlanetTile planetTile, Faction forFaction)
     {
-        base.PostPostGeneratedForTrader(trader, forTile, forFaction);
+        base.PostPostGeneratedForTrader(trader, planetTile, forFaction);
         hatcheeFaction = forFaction;
     }
 

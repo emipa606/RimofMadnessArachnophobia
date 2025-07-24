@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: consuming. -->
+  <ROMA_ConsumeCocoon.reportString>consuming.</ROMA_ConsumeCocoon.reportString>
+  <!-- EN: hunting TargetA. -->
+  <ROMA_SpinPrey.reportString>hunting TargetA.</ROMA_SpinPrey.reportString>
+  <!-- EN: spinning web. -->
+  <ROMA_SpinWeb.reportString>spinning web.</ROMA_SpinWeb.reportString>
+</LanguageData>

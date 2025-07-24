@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: spider -->
+  <ROMA_SpiderRace.label>spider</ROMA_SpiderRace.label>
+  <!-- EN: This rabbit-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite. -->
+  <ROMA_SpiderRace.description>This rabbit-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite.</ROMA_SpiderRace.description>
+  <!-- EN: fangs -->
+  <ROMA_SpiderRace.tools.fangs.label>fangs</ROMA_SpiderRace.tools.fangs.label>
+</LanguageData>

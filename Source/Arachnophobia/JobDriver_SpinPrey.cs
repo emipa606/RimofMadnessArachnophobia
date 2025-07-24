@@ -13,7 +13,7 @@ public class JobDriver_SpinPrey : JobDriver
     private bool firstHit = true;
     private bool notifiedPlayer;
 
-    public ThingDef CocoonDef
+    private ThingDef CocoonDef
     {
         get
         {
@@ -59,7 +59,7 @@ public class JobDriver_SpinPrey : JobDriver
         return currentActivity;
     }
 
-    public IntVec3 CocoonPlace(Building_Cocoon exception = null)
+    private IntVec3 CocoonPlace(Building_Cocoon exception = null)
     {
         var newPosition = TargetB.Cell;
         var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: cocoon -->
+  <ROMA_Cocoon.label>cocoon</ROMA_Cocoon.label>
+  <!-- EN: A silk spun cocoon for holding subdued prey both alive or dead. -->
+  <ROMA_Cocoon.description>A silk spun cocoon for holding subdued prey both alive or dead.</ROMA_Cocoon.description>
+  <!-- EN: large cocoon -->
+  <ROMA_CocoonGiant.label>large cocoon</ROMA_CocoonGiant.label>
+  <!-- EN: A huge silk spun web for holding larger prey. -->
+  <ROMA_CocoonGiant.description>A huge silk spun web for holding larger prey.</ROMA_CocoonGiant.description>
+</LanguageData>

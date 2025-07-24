@@ -14,7 +14,7 @@ public class WorldComponent_ModSettings(World world) : WorldComponent(world)
         ResolveSpiderDefSettings();
     }
 
-    public void ResolveSpiderDefSettings()
+    private void ResolveSpiderDefSettings()
     {
         if (SpiderDefsModified)
         {

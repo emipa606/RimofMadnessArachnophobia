@@ -22,13 +22,13 @@ namespace Arachnophobia;
 
 public static class CthulhuUtility
 {
-    public const string SanityLossDef = "ROM_SanityLoss";
-    public const string AltSanityLossDef = "Cults_SanityLoss";
+    private const string SanityLossDef = "ROM_SanityLoss";
+    private const string AltSanityLossDef = "Cults_SanityLoss";
 
-    public static bool modCheck;
-    public static bool loadedCosmicHorrors;
-    public static bool loadedIndustrialAge;
-    public static bool loadedCults;
+    private static bool modCheck;
+    private static bool loadedCosmicHorrors;
+    private static bool loadedIndustrialAge;
+    private static bool loadedCults;
 
 
     /// <summary>
@@ -54,7 +54,7 @@ public static class CthulhuUtility
     }
 
 
-    public static bool IsCosmicHorrorsLoaded()
+    private static bool IsCosmicHorrorsLoaded()
     {
         if (!modCheck)
         {
@@ -65,7 +65,7 @@ public static class CthulhuUtility
     }
 
 
-    public static void ModCheck()
+    private static void ModCheck()
     {
         loadedCosmicHorrors = false;
         loadedIndustrialAge = false;

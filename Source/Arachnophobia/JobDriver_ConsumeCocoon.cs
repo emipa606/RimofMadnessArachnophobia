@@ -16,11 +16,11 @@ public class JobDriver_ConsumeCocoon : JobDriver
 
     private bool notifiedPlayer;
 
-    public string report = "";
+    private string report = "";
 
     private int ticksLeft;
 
-    public Building_Cocoon Cocoon
+    private Building_Cocoon Cocoon
     {
         get
         {
@@ -34,7 +34,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
         }
     }
 
-    public Pawn Victim
+    private Pawn Victim
     {
         get
         {
@@ -98,7 +98,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
             .FailOnDestroyedNullOrForbidden(TargetIndex.B);
     }
 
-    public Toil Liquify()
+    private Toil Liquify()
     {
         //LIQUIFY - Burn all the victim's innards
         var liquify = new Toil
@@ -183,7 +183,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
         return liquify;
     }
 
-    public void AddIngestionEffects(Toil toil, Pawn chewer, TargetIndex ingestibleInd, TargetIndex eatSurfaceInd)
+    private void AddIngestionEffects(Toil toil, Pawn chewer, TargetIndex ingestibleInd, TargetIndex eatSurfaceInd)
     {
         //Log.Message("3");
         if (Victim == null)
@@ -239,7 +239,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
         });
     }
 
-    public Toil DrinkCorpse(float durationMultiplier)
+    private Toil DrinkCorpse(float durationMultiplier)
     {
         report = "ROM_ConsumeJob2".Translate();
         var drinkCorpse = new Toil
@@ -259,7 +259,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
                 pawn.jobs.curDriver.ticksLeftThisToil =
                     Mathf.RoundToInt(thing.def.ingestible.baseIngestTicks * durationMultiplier);
             },
-            tickAction = delegate { pawn.GainComfortFromCellIfPossible(); }
+            tickIntervalAction = delegate(int delta) { pawn.GainComfortFromCellIfPossible(delta); }
         };
         drinkCorpse.WithProgressBar(TargetIndex.A, delegate
         {

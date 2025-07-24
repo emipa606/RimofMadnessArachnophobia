@@ -2,5 +2,14 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "1",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 79963,
+  "LinesOfXML": 71252,
+  "CodeBaseSize": 82,
+  "LastXmlCleaning": "2025-07-24T17:26:44.0299337+02:00",
+  "SocialImageSet": true,
+  "SearchTags": "spiders"
 }

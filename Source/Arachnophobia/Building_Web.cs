@@ -17,7 +17,7 @@ public class Building_Web : Building
         set => spinner = value;
     }
 
-    public void WebEffect(Pawn p)
+    private void WebEffect(Pawn p)
     {
         try
         {
@@ -90,7 +90,7 @@ public class Building_Web : Building
         return isPlayerSpinner || Spinner?.Faction != Faction.OfPlayer;
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         var thingList = new HashSet<Thing>(Position.GetThingList(Map));
         foreach (var t in thingList)

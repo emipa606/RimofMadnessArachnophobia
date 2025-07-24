@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: giant spider -->
+  <ROMA_SpiderKindGiant.label>giant spider</ROMA_SpiderKindGiant.label>
+  <!-- EN: giant spiderling -->
+  <ROMA_SpiderKindGiant.lifeStages.giant_spiderling.label>giant spiderling</ROMA_SpiderKindGiant.lifeStages.giant_spiderling.label>
+  <!-- EN: juvenile giant spider -->
+  <ROMA_SpiderKindGiant.lifeStages.juvenile_giant_spider.label>juvenile giant spider</ROMA_SpiderKindGiant.lifeStages.juvenile_giant_spider.label>
+</LanguageData>

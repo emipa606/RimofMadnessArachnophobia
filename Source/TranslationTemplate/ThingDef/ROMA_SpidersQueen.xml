@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: giant spider queen -->
+  <ROMA_SpiderRaceGiantQueen.label>giant spider queen</ROMA_SpiderRaceGiantQueen.label>
+  <!-- EN: Half the size of a thrumbo, the giant spider queen is a prime example of genetic engineering gone horribly wrong. The queen varieties also have wings capable of flying short distances and stingers capable of delivering massive neurotoxin doses. -->
+  <ROMA_SpiderRaceGiantQueen.description>Half the size of a thrumbo, the giant spider queen is a prime example of genetic engineering gone horribly wrong. The queen varieties also have wings capable of flying short distances and stingers capable of delivering massive neurotoxin doses.</ROMA_SpiderRaceGiantQueen.description>
+  <!-- EN: fangs -->
+  <ROMA_SpiderRaceGiantQueen.tools.fangs.label>fangs</ROMA_SpiderRaceGiantQueen.tools.fangs.label>
+  <!-- EN: stinger -->
+  <ROMA_SpiderRaceGiantQueen.tools.stinger.label>stinger</ROMA_SpiderRaceGiantQueen.tools.stinger.label>
+  <!-- EN: front left leg -->
+  <ROMA_SpiderRaceGiantQueen.tools.front_left_leg.label>front left leg</ROMA_SpiderRaceGiantQueen.tools.front_left_leg.label>
+  <!-- EN: front right leg -->
+  <ROMA_SpiderRaceGiantQueen.tools.front_right_leg.label>front right leg</ROMA_SpiderRaceGiantQueen.tools.front_right_leg.label>
+</LanguageData>
