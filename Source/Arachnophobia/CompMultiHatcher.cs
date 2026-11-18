@@ -39,16 +39,12 @@ public class CompMultiHatcher : ThingComp
 
     public override void CompTick()
     {
-        //if (!this.TemperatureDamaged)
-        //{
         var num = 1f / (Props.hatcherDaystoHatch * 60000f);
         gestateProgress += num;
         if (gestateProgress > 1f)
         {
             Hatch();
         }
-
-        //}
     }
 
     private void Hatch()
@@ -139,9 +135,9 @@ public class CompMultiHatcher : ThingComp
         }
     }
 
-    public override void PostPostGeneratedForTrader(TraderKindDef trader, PlanetTile planetTile, Faction forFaction)
+    public override void PostPostGeneratedForTrader(TraderKindDef trader, PlanetTile forTile, Faction forFaction)
     {
-        base.PostPostGeneratedForTrader(trader, planetTile, forFaction);
+        base.PostPostGeneratedForTrader(trader, forTile, forFaction);
         hatcheeFaction = forFaction;
     }
 

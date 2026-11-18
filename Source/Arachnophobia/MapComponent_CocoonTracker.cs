@@ -7,39 +7,23 @@ namespace Arachnophobia;
 
 public class MapComponent_CocoonTracker(Map map) : MapComponent(map)
 {
-    private HashSet<Thing> domesticCocoons;
     public bool isGiantSpiderPair;
     public bool isSpiderPair;
 
-    private HashSet<Thing> wildCocoons;
-    //Wild spiders should go for non-home located cocoons and cocoons that are not in storage areas.
-    //var wildCocoons = new List<Thing>(
-
-
-    //    //Domestic spiders should go for home located cocoons or cocoons in storage areas.
-    //    var domesticCocoons = new List<Thing>(
-    //        allCocoons?.FindAll(x => (x.Map?.areaManager?.Home[x.Position] ?? false) || (x?.IsInAnyStorage() ?? false))
-    //        );
-    //    if (domesticCocoons != null && domesticCocoons.Count > 0 && t.Faction == Faction.OfPlayerSilentFail) return domesticCocoons;
-
-    //    //Other cases should not exist.
-    //    //("Arachophobia :: No cocoons exist");
-    //    return allCocoons;
-
-    public HashSet<Thing> AllCocoons => [..WildCocoons.Concat(DomesticCocoons).ToList()];
+    public HashSet<Thing> AllCocoons => [.. WildCocoons.Concat(DomesticCocoons).ToList()];
 
     public HashSet<Thing> WildCocoons
     {
         get
         {
-            wildCocoons ??=
+            field ??=
             [
-                ..map?.listerThings?.AllThings?.FindAll(x =>
+                .. map?.listerThings?.AllThings?.FindAll(x =>
                     x is Building_Cocoon { Spawned: true } && (!x.Map?.areaManager?.Home[x.Position] ?? false) &&
                     !x.IsInAnyStorage())!
             ];
 
-            return wildCocoons;
+            return field;
         }
     }
 
@@ -47,19 +31,19 @@ public class MapComponent_CocoonTracker(Map map) : MapComponent(map)
     {
         get
         {
-            if (domesticCocoons != null)
+            if (field != null)
             {
-                return domesticCocoons;
+                return field;
             }
 
             var allTemp = map?.listerThings?.AllThings?.FindAll(x => x is Building_Cocoon { Spawned: true });
-            domesticCocoons =
+            field =
             [
-                ..allTemp?.FindAll(x =>
+                .. allTemp?.FindAll(x =>
                     (x.Map?.areaManager?.Home[x.Position] ?? false) || x.IsInAnyStorage())!
             ];
 
-            return domesticCocoons;
+            return field;
         }
     }
 

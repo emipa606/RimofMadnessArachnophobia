@@ -12,7 +12,6 @@ public static class Faction_Notify_MemberTookDamage
     {
         if (dinfo.Instigator is Pawn { CurJob: not null } p && p.CurJob.def == ROMADefOf.ROMA_SpinPrey)
         {
-            //Log.Message("Spiders GOOO");
             AccessTools.Method(typeof(Faction), "TookDamageFromPredator").Invoke(__instance, [p]);
         }
     }

@@ -57,13 +57,11 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
             foreach (var thing1 in localCocoons)
             {
                 var cocoon = (Building_Cocoon)thing1;
-                //Log.Message("1");
                 if (cocoon?.isConsumableBy(pawn) != true || cocoon.CurrentDrinker != null)
                 {
                     continue;
                 }
 
-                //Log.Message("2");
                 if (closestCocoon == null)
                 {
                     closestCocoon = cocoon;
@@ -82,10 +80,8 @@ public class JobGiver_GetFoodSpider : ThinkNode_JobGiver
 
             if (closestCocoon != null)
             {
-                //Log.Message("3");
                 closestCocoon.CurrentDrinker = pawn as PawnWebSpinner;
                 var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, closestCocoon);
-                //pawn.Reserve(closestCocoon, newJob);
                 return newJob;
             }
         }

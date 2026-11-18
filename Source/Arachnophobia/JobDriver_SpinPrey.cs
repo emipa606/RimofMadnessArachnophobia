@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -68,18 +69,15 @@ public class JobDriver_SpinPrey : JobDriver
             localCocoons.Remove(exception);
         }
 
-        //Log.Message("1");
         if (localCocoons is not { Count: > 0 })
         {
             return newPosition;
         }
-        //Log.Message("2");
 
         var tempCocoons = new HashSet<Thing>(localCocoons.InRandomOrder());
         foreach (var thing in tempCocoons)
         {
             var cocoon = (Building_Cocoon)thing;
-            //Log.Message("3");
             if (cocoon.NextValidPlacementSpot is var vec && vec != default)
             {
                 newPosition = vec;
@@ -124,8 +122,6 @@ public class JobDriver_SpinPrey : JobDriver
         {
             pawn.ClearAllReservations();
             pawn.Reserve(TargetA, job);
-            //this.Map.physicalInteractionReservationManager.ReleaseAllForTarget(TargetA);
-            //this.Map.physicalInteractionReservationManager.Reserve(this.GetActor(), TargetA);
             currentActivity = "ROM_SpinPreyJob1".Translate(TargetA.Thing?.LabelShort ?? "");
         });
 
@@ -141,7 +137,6 @@ public class JobDriver_SpinPrey : JobDriver
         {
             initAction = delegate
             {
-                //Log.Message("5");
                 if (GetActor() is not PawnWebSpinner spinner)
                 {
                     return;
@@ -169,12 +164,9 @@ public class JobDriver_SpinPrey : JobDriver
                     var quality = 0.5f; //Not a doctor or attentive to human needs
                     var hediffsToTend = new List<Hediff>();
                     var hediffs = Prey.health.hediffSet.hediffs;
-                    foreach (var hediff in hediffs)
+                    foreach (var hediff in hediffs.Where(hediff => hediff.TendableNow()))
                     {
-                        if (hediff.TendableNow())
-                        {
-                            hediffsToTend.Add(hediff);
-                        }
+                        hediffsToTend.Add(hediff);
                     }
 
                     for (var i = 0; i < hediffsToTend.Count; i++)
@@ -213,7 +205,6 @@ public class JobDriver_SpinPrey : JobDriver
                     newCocoon.SetFactionDirect(Faction.OfPlayerSilentFail);
                 }
 
-                //Log.Message("New Spinner: " + newCocoon.Spinner.Label);
                 newCocoon.TryGetInnerInteractableThingOwner().TryAdd(toLoad);
                 pawn?.CurJob?.SetTarget(TargetIndex.B, newCocoon);
             },
@@ -224,10 +215,8 @@ public class JobDriver_SpinPrey : JobDriver
         var pickupCocoon = Toils_Haul.StartCarryThing(TargetIndex.B);
         pickupCocoon.AddPreInitAction(delegate
         {
-            //this.TargetB.Thing.DeSpawn();
             pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace((Building_Cocoon)TargetB.Thing));
             pawn.Reserve(TargetC, job);
-            //this.pawn.Map.physicalInteractionReservationManager.Reserve(this.pawn, TargetC);
         });
         var relocateCocoon = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
         var dropCocoon = Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, relocateCocoon, false).FailOn(() =>
@@ -261,11 +250,6 @@ public class JobDriver_SpinPrey : JobDriver
         yield return dropCocoon;
         yield break;
 
-        //float durationMultiplier = 1f / this.pawn.GetStatValue(StatDefOf.EatingSpeed, true);
-        //yield return Toils_Ingest.ChewIngestible(this.pawn, durationMultiplier, TargetIndex.A, TargetIndex.None).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-        //yield return Toils_Ingest.FinalizeIngest(this.pawn, TargetIndex.A);
-        //yield return Toils_Jump.JumpIf(gotoCorpse, () => this.pawn.needs.food.CurLevelPercentage < 0.9f);
-
         void onHitAction()
         {
             var prey = Prey;
@@ -278,7 +262,7 @@ public class JobDriver_SpinPrey : JobDriver
                     Messages.Message(
                         "MessageAttackedByPredator".Translate(prey.LabelShort, pawn.LabelIndefinite(),
                                 prey.Named("PREY"), pawn.Named("PREDATOR"))
-                            .CapitalizeFirst(), prey, MessageTypeDefOf.ThreatBig); // MessageSound.SeriousAlert);
+                            .CapitalizeFirst(), prey, MessageTypeDefOf.ThreatBig);
                 }
 
                 Map.attackTargetsCache.UpdateTarget(pawn);
@@ -288,7 +272,7 @@ public class JobDriver_SpinPrey : JobDriver
         }
     }
 
-    public override bool TryMakePreToilReservations(bool showResult)
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
         return true;
     }

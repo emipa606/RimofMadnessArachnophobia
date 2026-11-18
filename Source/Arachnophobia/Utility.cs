@@ -10,9 +10,6 @@ public static class Utility
 {
     public static HashSet<Thing> CocoonsFor(Map map, Thing t)
     {
-        //All cocoons in the allowed area for Thing t.
-        //var allCocoons = new List<Thing>(map.GetComponent<MapComponent_CocoonTracker>().AllCocoons);
-
         //Wild spiders should go for non-home located cocoons and cocoons that are not in storage areas.
         var wildCocoons = map.GetComponent<MapComponent_CocoonTracker>().WildCocoons;
         if (wildCocoons != null && t.Faction != Faction.OfPlayerSilentFail)
@@ -24,11 +21,9 @@ public static class Utility
         var domesticCocoons = map.GetComponent<MapComponent_CocoonTracker>().DomesticCocoons;
         if (domesticCocoons != null && t.Faction == Faction.OfPlayerSilentFail)
         {
-            return [..domesticCocoons.Where(x => x.PositionHeld.InAllowedArea(t as Pawn))];
+            return [.. domesticCocoons.Where(x => x.PositionHeld.InAllowedArea(t as Pawn))];
         }
 
-        //Other cases should not exist.
-        //("Arachophobia :: No cocoons exist");
         return null;
     }
 

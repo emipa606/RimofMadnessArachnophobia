@@ -11,21 +11,20 @@ public class PawnWebSpinner : Pawn
     private bool firstTick;
 
     private Thing web;
-    private int webPeriod = -1;
     private int websMade;
 
     private int WebPeriod
     {
         get
         {
-            if (webPeriod == -1)
+            if (field == -1)
             {
-                webPeriod = (int)Mathf.Lerp(3000f, 5000f, Rand.ValueSeeded(thingIDNumber ^ 74374237));
+                field = (int)Mathf.Lerp(3000f, 5000f, Rand.ValueSeeded(thingIDNumber ^ 74374237));
             }
 
-            return webPeriod;
+            return field;
         }
-    }
+    } = -1;
 
     public Thing Web
     {
@@ -75,7 +74,7 @@ public class PawnWebSpinner : Pawn
         //Our webspinners will attack prey under a few conditions.
         var hungryNow = needs?.food?.CurCategory <= HungerCategory.Hungry;
         var canPreyUpon = (toucher?.RaceProps?.canBePredatorPrey ?? false) &&
-                          (float)toucher.RaceProps?.baseBodySize <= (RaceProps?.maxPreyBodySize ?? 0);
+                          (float)toucher.RaceProps?.baseBodySize! <= (RaceProps?.maxPreyBodySize ?? 0);
         var attackAnyway = Rand.Value > 0.95; //5% chance to attack regardless
         var friendly = toucher?.RaceProps != null && Faction != null && (toucher.Faction == Faction ||
                                                                          !toucher.RaceProps.Animal &&
@@ -115,39 +114,32 @@ public class PawnWebSpinner : Pawn
             }
 
             //Only one? Let's fix that.
-            if (def == ROMADefOf.ROMA_SpiderRace)
+            if (def == ROMADefOf.ROMA_SpiderRace && MapHeld.GetComponent<MapComponent_CocoonTracker>() is
+                    { isSpiderPair: false } tracker1)
             {
-                if (MapHeld.GetComponent<MapComponent_CocoonTracker>() is { isSpiderPair: false } tracker)
-                {
-                    tracker.isSpiderPair = true;
-                    var newThing = PawnGenerator.GeneratePawn(kindDef, Faction);
-                    var newSpinner =
-                        (PawnWebSpinner)GenSpawn.Spawn((PawnWebSpinner)newThing, PositionHeld, MapHeld);
-                    newSpinner.gender = gender == Gender.Male ? Gender.Female : Gender.Male;
-                }
+                tracker1.isSpiderPair = true;
+                var newThing = PawnGenerator.GeneratePawn(kindDef, Faction);
+                var newSpinner =
+                    (PawnWebSpinner)GenSpawn.Spawn((PawnWebSpinner)newThing, PositionHeld, MapHeld);
+                newSpinner.gender = gender == Gender.Male ? Gender.Female : Gender.Male;
             }
 
-            if (def == ROMADefOf.ROMA_SpiderRaceGiant)
+            if (def == ROMADefOf.ROMA_SpiderRaceGiant && MapHeld.GetComponent<MapComponent_CocoonTracker>() is
+                    { isGiantSpiderPair: false } tracker)
             {
-                if (MapHeld.GetComponent<MapComponent_CocoonTracker>() is { isGiantSpiderPair: false } tracker)
-                {
-                    tracker.isGiantSpiderPair = true;
-                    var newThing = PawnGenerator.GeneratePawn(kindDef, Faction);
-                    var newSpinner =
-                        (PawnWebSpinner)GenSpawn.Spawn((PawnWebSpinner)newThing, PositionHeld, MapHeld);
-                    newSpinner.gender = gender == Gender.Male ? Gender.Female : Gender.Male;
-                }
+                tracker.isGiantSpiderPair = true;
+                var newThing = PawnGenerator.GeneratePawn(kindDef, Faction);
+                var newSpinner =
+                    (PawnWebSpinner)GenSpawn.Spawn((PawnWebSpinner)newThing, PositionHeld, MapHeld);
+                newSpinner.gender = gender == Gender.Male ? Gender.Female : Gender.Male;
             }
         }
 
-        if (Find.TickManager.TicksGame % WebPeriod == 0)
+        if (Find.TickManager.TicksGame % WebPeriod == 0 && health?.hediffSet?.GetNotMissingParts()
+                ?.FirstOrDefault(x => x.def.defName == "ROMA_Spinneret") != null)
         {
             //Have a spinneret? Make some web.
-            if (health?.hediffSet?.GetNotMissingParts()
-                    ?.FirstOrDefault(x => x.def.defName == "ROMA_Spinneret") != null)
-            {
-                MakeWeb();
-            }
+            MakeWeb();
         }
 
         if (Find.TickManager.TicksGame % 1000 == 0)

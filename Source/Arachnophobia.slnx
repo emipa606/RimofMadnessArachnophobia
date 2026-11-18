@@ -6,4 +6,51 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="Arachnophobia/Arachnophobia.csproj" />
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/ROMA_Keyed.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs/">
+    <File Path="../1.7/Defs/ThingDefs/ROMA_Chitin.xml" />
+    <File Path="../1.7/Defs/ThingDefs/ROMA_Cocoons.xml" />
+    <File Path="../1.7/Defs/ThingDefs/ROMA_Eggs.xml" />
+    <File Path="../1.7/Defs/ThingDefs/ROMA_Filth.xml" />
+    <File Path="../1.7/Defs/ThingDefs/ROMA_Resources.xml" />
+    <File Path="../1.7/Defs/ThingDefs/ROMA_Web.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/PawnKindDefs/">
+    <File Path="../1.7/Defs/PawnKindDefs/ROMA_PawnKindBase.xml" />
+    <File Path="../1.7/Defs/PawnKindDefs/ROMA_Spiders.xml" />
+    <File Path="../1.7/Defs/PawnKindDefs/ROMA_SpidersGiant.xml" />
+    <File Path="../1.7/Defs/PawnKindDefs/ROMA_SpidersQueen.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/HediffDefs/">
+    <File Path="../1.7/Defs/HediffDefs/ROMA_Venom.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/BodyDefs/">
+    <File Path="../1.7/Defs/BodyDefs/ROMA_Bodies.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/SoundDefs/">
+    <File Path="../1.7/Defs/SoundDefs/ROMA_Sustainers.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/IncidentDefs/">
+    <File Path="../1.7/Defs/IncidentDefs/ROMA_IncidentDefs.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/DamageDefs/">
+    <File Path="../1.7/Defs/DamageDefs/ROMA_Sting.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/LifeStageDefs/">
+    <File Path="../1.7/Defs/LifeStageDefs/ROMA_LifeStages.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/JobDefs/">
+    <File Path="../1.7/Defs/JobDefs/ROMA_JobsAnimals.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/Patches/">
+    <File Path="../Patches/patches.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThinkTreeDefs/">
+    <File Path="../1.7/Defs/ThinkTreeDefs/ROMA_SpiderThinkTrees.xml" />
+  </Folder>
 </Solution>

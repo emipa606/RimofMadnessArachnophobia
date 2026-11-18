@@ -19,7 +19,6 @@ public static class GenHostility_GetPreyOfMyFaction
 
         if (curJob.GetTarget(TargetIndex.A).Thing is Pawn pawn && pawn.Faction == myFaction)
         {
-            //Log.Message("Spiders GOOOO");
             __result = pawn;
         }
     }

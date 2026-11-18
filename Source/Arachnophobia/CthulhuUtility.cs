@@ -2,6 +2,7 @@
 // These are basic usings. Always let them be here.
 // ----------------------------------------------------------------------
 
+using System.Linq;
 using Verse;
 // ----------------------------------------------------------------------
 // These are RimWorld-specific usings. Activate/Deactivate what you need:
@@ -69,34 +70,26 @@ public static class CthulhuUtility
     {
         loadedCosmicHorrors = false;
         loadedIndustrialAge = false;
-        foreach (var ResolvedMod in LoadedModManager.RunningMods)
+        foreach (var modName in LoadedModManager.RunningMods.Select(mod => mod.Name))
         {
             if (loadedCosmicHorrors && loadedIndustrialAge && loadedCults)
             {
                 break; //Save some loading
             }
 
-            if (ResolvedMod.Name.Contains("Call of Cthulhu - Cosmic Horrors"))
+            if (modName.Contains("Call of Cthulhu - Cosmic Horrors"))
             {
-                //DebugReport("Loaded - Call of Cthulhu - Cosmic Horrors");
                 loadedCosmicHorrors = true;
             }
 
-            if (ResolvedMod.Name.Contains("Call of Cthulhu - Industrial Age"))
+            if (modName.Contains("Call of Cthulhu - Industrial Age"))
             {
-                //DebugReport("Loaded - Call of Cthulhu - Industrial Age");
                 loadedIndustrialAge = true;
             }
 
-            if (ResolvedMod.Name.Contains("Call of Cthulhu - Cults"))
+            if (modName.Contains("Call of Cthulhu - Cults"))
             {
-                //DebugReport("Loaded - Call of Cthulhu - Cults");
                 loadedCults = true;
-            }
-
-            if (ResolvedMod.Name.Contains("Call of Cthulhu - Factions"))
-            {
-                //DebugReport("Loaded - Call of Cthulhu - Factions");
             }
         }
 

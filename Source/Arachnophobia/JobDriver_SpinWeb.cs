@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -24,7 +25,7 @@ public class JobDriver_SpinWeb : JobDriver
         }
     }
 
-    public override bool TryMakePreToilReservations(bool showResult)
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
         return true;
     }
@@ -45,12 +46,9 @@ public class JobDriver_SpinWeb : JobDriver
                     pawn?.CurJob.SetTarget(TargetIndex.A,
                         RCellFinder.RandomWanderDestFor(pawn, pawn.Position, 5f, null, Danger.Some));
                     var cellRect = GenAdj.OccupiedRect(TargetLocA, Rot4.North, WebDef.Size);
-                    foreach (var cellRectCell in cellRect.Cells)
+                    if (cellRect.Cells.Any(cell => cell.Walkable(Map)))
                     {
-                        if (cellRectCell.Walkable(Map))
-                        {
-                            breakNow = true;
-                        }
+                        breakNow = true;
                     }
 
                     if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, pawn?.Map).Accepted)

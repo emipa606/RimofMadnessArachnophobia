@@ -306,21 +306,6 @@ public class Building_Cocoon : Building_Casket
         return result.ToString().TrimEndNewlines();
     }
 
-    public override bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
-    {
-        if (!base.TryAcceptThing(thing, allowSpecialEffects))
-        {
-            return false;
-        }
-
-        if (allowSpecialEffects)
-        {
-            //sound.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
-        }
-
-        return true;
-    }
-
     protected override void Tick()
     {
         base.Tick();
@@ -418,7 +403,6 @@ public class Building_Cocoon : Building_Casket
 
             PawnComponentsUtility.AddComponentsForSpawn(pawn);
             pawn.filth.GainFilth(filthCobwebs);
-            //pawn.health.AddHediff(HediffDefOf.ToxicBuildup, null, null);
             HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, 0.3f);
         }
 

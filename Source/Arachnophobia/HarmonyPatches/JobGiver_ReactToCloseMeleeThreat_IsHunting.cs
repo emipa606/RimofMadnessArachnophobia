@@ -16,15 +16,13 @@ public static class JobGiver_ReactToCloseMeleeThreat_IsHunting
             return;
         }
 
-        if (pawn.jobs?.curDriver is JobDriver_PredatorHunt)
+        switch (pawn.jobs?.curDriver)
         {
-            return;
-        }
-
-        if (pawn.jobs?.curDriver is JobDriver_SpinPrey jobDriver_Hunt)
-        {
-            //Log.Message("Spiders GOOOO");
-            __result = jobDriver_Hunt.Prey == prey;
+            case JobDriver_PredatorHunt:
+                return;
+            case JobDriver_SpinPrey jobDriver_Hunt:
+                __result = jobDriver_Hunt.Prey == prey;
+                break;
         }
     }
 }

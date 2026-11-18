@@ -4,7 +4,7 @@ using Verse;
 namespace Arachnophobia;
 
 [DefOf]
-public class ROMADefOf
+public static class ROMADefOf
 {
     public static ThingDef ROMA_SpiderRace;
     public static ThingDef ROMA_SpiderRaceGiant;

@@ -64,13 +64,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
     {
         //Toil definitions
 
-        AddFinishAction(delegate
-        {
-            if (Cocoon != null)
-            {
-                Cocoon.CurrentDrinker = null;
-            }
-        });
+        AddFinishAction(delegate { Cocoon?.CurrentDrinker = null; });
 
         var gotoBody = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
         gotoBody.AddPreInitAction(delegate
@@ -176,8 +170,13 @@ public class JobDriver_ConsumeCocoon : JobDriver
                 return 1f;
             }
 
-            return 1f - (pawn.jobs.curDriver.ticksLeftThisToil /
-                         Mathf.Round(thing.def.ingestible.baseIngestTicks));
+            if (pawn != null)
+            {
+                return 1f - (pawn.jobs.curDriver.ticksLeftThisToil /
+                             Mathf.Round(thing.def.ingestible.baseIngestTicks));
+            }
+
+            return 1f;
         });
         AddIngestionEffects(liquify, pawn, TargetIndex.B, TargetIndex.A);
         return liquify;
@@ -185,7 +184,6 @@ public class JobDriver_ConsumeCocoon : JobDriver
 
     private void AddIngestionEffects(Toil toil, Pawn chewer, TargetIndex ingestibleInd, TargetIndex eatSurfaceInd)
     {
-        //Log.Message("3");
         if (Victim == null)
         {
             EndJobWith(JobCondition.Incompletable);
@@ -222,7 +220,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
 
             if (eatSurfaceInd != TargetIndex.None && toil.actor.CurJob.GetTarget(eatSurfaceInd).IsValid)
             {
-                return (LocalTargetInfo)toil.actor?.CurJob?.GetTarget(eatSurfaceInd);
+                return (LocalTargetInfo)toil.actor?.CurJob?.GetTarget(eatSurfaceInd)!;
             }
 
             return thing;
@@ -269,8 +267,13 @@ public class JobDriver_ConsumeCocoon : JobDriver
                 return 1f;
             }
 
-            return 1f - (pawn.jobs.curDriver.ticksLeftThisToil /
-                         Mathf.Round(thing.def.ingestible.baseIngestTicks * durationMultiplier));
+            if (pawn != null)
+            {
+                return 1f - (pawn.jobs.curDriver.ticksLeftThisToil /
+                             Mathf.Round(thing.def.ingestible.baseIngestTicks * durationMultiplier));
+            }
+
+            return 1f;
         });
         drinkCorpse.defaultCompleteMode = ToilCompleteMode.Delay;
         drinkCorpse.WithEffect(EffecterDefOf.EatMeat, TargetIndex.A);
@@ -278,8 +281,6 @@ public class JobDriver_ConsumeCocoon : JobDriver
         drinkCorpse.PlaySustainerOrSound(() => SoundDefOf.RawMeat_Eat);
         drinkCorpse.AddFinishAction(delegate
         {
-            //Log.Message("11");
-
             if (pawn?.CurJob == null)
             {
                 return;
@@ -301,7 +302,7 @@ public class JobDriver_ConsumeCocoon : JobDriver
         return drinkCorpse;
     }
 
-    public override bool TryMakePreToilReservations(bool showResult)
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
         return pawn.Reserve(Cocoon, job);
     }

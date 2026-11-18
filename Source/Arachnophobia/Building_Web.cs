@@ -70,14 +70,11 @@ public class Building_Web : Building
                     MessageTypeDefOf.NeutralEvent);
             }
 
-            if (spinner != null)
-            {
-                spinner.Web = null;
-            }
+            spinner?.Web = null;
         }
         catch
         {
-            /* Log.Message(e.ToString()); */
+            // Ignore
         }
     }
 
@@ -113,32 +110,6 @@ public class Building_Web : Building
         }
 
         base.Tick();
-        //try
-        //{
-        //    if (!this.Destroyed && this.Spawned && Find.TickManager.TicksGame % 20 == 0)
-        //    {
-        //        var mapHeld = this.MapHeld;
-        //        if (mapHeld != null)
-        //        {
-        //            var cells = new List<IntVec3>(this?.OccupiedRect().Cells?.ToList() ?? null);
-        //            var cellCount = (!cells.NullOrEmpty()) ? cells.Count : 0;
-        //            for (int j = 0; j < cellCount; j++)
-        //            {
-        //                var thingList = (!cells.NullOrEmpty()) ? cells[j].GetThingList(mapHeld) : null;
-        //                var thingCount = (!thingList.NullOrEmpty()) ? thingList.Count : 0;
-        //                for (int i = 0; i < thingCount; i++)
-        //                {
-        //                    if (thingList[i] is Pawn p && !(thingList[i] is PawnWebSpinner))
-        //                    {
-        //                        WebEffect(p);
-        //                    }
-        //                }
-        //            }
-        //            cells = null;
-        //        }
-        //    }
-        //}
-        //catch (Exception) { }
     }
 
     public override string GetInspectString()
